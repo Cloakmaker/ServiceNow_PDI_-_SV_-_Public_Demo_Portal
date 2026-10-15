@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sp_page_route_map</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sp_page_route_map">portalsLIKEebcd3cdb97ab8fd0d3efb73de053af30^EQ<item endquery="false" field="portals" goto="false" newquery="false" operator="LIKE" or="false" value="ebcd3cdb97ab8fd0d3efb73de053af30"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>SV PDP Page Route Map Article Update</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	// gs.info("SV PDI: STARTING");
+	var kb = new GlideRecord('kb_knowledge');
+	kb.addQuery('article_id', '00cd08eb97ff4710d3efb73de053af4e'); //00cd08eb97ff4710d3efb73de053af4e
+	kb.addQuery('workflow_state', 'published');
+	kb.orderByDesc('version');
+	kb.setLimit(1);
+	kb.query();
+
+	if (kb.next()) {
+		//Check out the article;
+		// gs.info("SV PDI: CHECKING OUT");
+		// TODO Move the messages to messages table
+		var recordClass = kb.sys_class_name;
+		var previous_valid_to = kb.getDisplayValue("valid_to");
+		var newRecord = new global.KBVersioning().checkout(kb);
+
+		if (newRecord) {
+			if (recordClass == 'kb_knowledge_block')
+				gs.addInfoMessage(gs.getMessage("A new version of the block is created for revision."));
+			else
+				gs.addInfoMessage(gs.getMessage("A new version of the article is created for revision."));
+
+			var current_valid_to = newRecord.getDisplayValue("valid_to");
+			if (previous_valid_to != current_valid_to) {
+				if (gs.nil(previous_valid_to))
+					gs.addInfoMessage(gs.getMessage("Valid to has been changed to {0}.", current_valid_to));
+				else
+					gs.addInfoMessage(gs.getMessage("Valid to has been changed from {0} to {1}.", [previous_valid_to, current_valid_to]));
+			}
+
+			//Update and publish newRecord
+			// gs.info("SV PDI: UPDATING");
+			var updatedText = "<p>This article has been automatically updated through a Business Rule on the Page Route Map table.</p><p>&nbsp;</p>";
+
+			var prm = new GlideRecord(current.getTableName());
+			prm.addEncodedQuery("active=true^portalsLIKEebcd3cdb97ab8fd0d3efb73de053af30");
+			prm.query();
+
+			if (!prm.hasNext()) {
+				updatedText += "<p>There are no active Page Route Map entries for the SV Public Demo Portal.</p>";
+			} else {
+				updatedText += '<table><caption style="width: max-content; max-width: 100%">Active Page Route Maps on the SV Public Demo Portal</caption><tr><th style="width: 50%;">Route From</th><th style="width: 50%;">Route To</th></tr>';
+				while (prm.next()) {
+					updatedText += "<tr><td>" + prm.route_from_page.id + "</td><td>" + prm.route_to_page.id + "</td></tr>";
+				}
+				updatedText += "</table>";
+			}
+
+			newRecord.text = updatedText;
+			newRecord.update();
+
+			// gs.info("SV PDI: PUBLISHING");
+			publish(newRecord);
+		} else {
+			gs.addErrorMessage(gs.getMessage("You cannot checkout this article as it is already checked out."));
+		}
+	}
+
+	function publish(articleGr) {
+		var getArt = new GlideRecord('kb_knowledge');
+		getArt.get(articleGr.sys_id.toString());
+		new global.KnowledgeUIAction().publish(getArt);
+		gs.addInfoMessage('New version of <a href="/kb_knowledge.do?sys_id=' + getArt.sys_id.toString() + '" target="_blank">' + getArt.number + '</a> created.');
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-13 21:48:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>296e8c2f97ff4710d3efb73de053af5f</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>SV PDP Page Route Map Article Update</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sys_script_296e8c2f97ff4710d3efb73de053af5f</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-13 22:43:28</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=296e8c2f97ff4710d3efb73de053af5f"/>
+</record_update>

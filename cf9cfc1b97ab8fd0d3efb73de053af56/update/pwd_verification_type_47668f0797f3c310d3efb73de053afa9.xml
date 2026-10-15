@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_verification_type">
+    <pwd_verification_type action="INSERT_OR_UPDATE">
+        <auto_enroll>true</auto_enroll>
+        <description>Verify user's Identity by sending them a code through their on-file email, and verifying the code they enter matches the one sent.</description>
+        <enrollment_processor/>
+        <enrollment_ui/>
+        <is_enrolled display_value="PwdEmailEnrollmentCheck">6206e0650b000300572a6f3ef6673ad0</is_enrolled>
+        <name>SV PDP Email Code Verification Type</name>
+        <security_level>300</security_level>
+        <sys_class_name>pwd_verification_type</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:17:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>47668f0797f3c310d3efb73de053afa9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SV PDP Email Code Verification Type</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>pwd_verification_type_47668f0797f3c310d3efb73de053afa9</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:17:51</sys_updated_on>
+        <verification_processor display_value="PwdVerifyEmailProcessor">878d1a940b333200572a6f3ef6673a8d</verification_processor>
+        <verification_ui display_value="$pwd_verify_email_ui">fbf235130b633200572a6f3ef6673a05</verification_ui>
+    </pwd_verification_type>
+</record_update>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="External User Self-Registration" source="com.snc.external_user_self_registration">523c0f079737c310d3efb73de053aff8</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 22:17:26</sys_created_on>
+        <sys_id>6c649b8f9777c310d3efb73de053afa1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 22:17:26</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

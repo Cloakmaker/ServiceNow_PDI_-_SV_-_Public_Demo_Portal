@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <class_name/>
+        <color>default</color>
+        <css>/*.subFlexLR {&#13;
+  display: flex;&#13;
+  gap: 10px;&#13;
+}&#13;
+&#13;
+.W75 {&#13;
+  max-width: 75%;&#13;
+}&#13;
+&#13;
+.W25 {&#13;
+  max-width: 25%;&#13;
+  margin-right: auto;&#13;
+  &gt; img {&#13;
+    margin-right: auto;&#13;
+    margin-left: auto;&#13;
+    height: 0;&#13;
+    min-height: 100%&#13;
+}*/</css>
+        <glyph>empty</glyph>
+        <id/>
+        <order>1</order>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">1357eae897738b14d3efb73de053afd7</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-05 00:36:02</sys_created_on>
+        <sys_id>3867eae897738b14d3efb73de053afe3</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>SVAboutFull</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_instance_3867eae897738b14d3efb73de053afe3</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-05 18:29:14</sys_updated_on>
+        <title>SVAboutFull</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<h1 style=\"text-align: center;\">About SV</h1>\r\n<div class=\"subFlexLR\">\r\n<div class=\"W75\">\r\n<p>Hello!</p>\r\n<p>I am Sable Vimes, a certified ServiceNow professional with more than 6 years of hands-on experience working on ServiceNow instances, primarily in the ITSM scope. My exposure to ServiceNow has granted me several hats including Administrator, Developer, Business Analyst, Process Owner, and Product Owner. Wearing more than one at a time is normal. Ultimately, I would like to be an architect one day.</p>\r\n<p>Throughout my career and positions, I taught myself various skills including HTML, CSS, JavaScript, VBA for Windows Applications, played with Batch scripting, became a go-to person for working through Excel formulas, Power BI data extraction and transformation, and so much more. If there was something that touched something I did, it kind of became a personal objective to learn more about it, how to use it, etc. In some cases, I even found or created replacement solutions for applications that were no longer going to be used internally which include:</p>\r\n<ul>\r\n<li>An entire learning management system</li>\r\n<li>Recording software for course development</li>\r\n<li>A temporary Excel interface for time-tracking complete with Clock In/Out buttons and pay period breakdowns</li>\r\n<li>Team Excel dashboards / workbooks configured so team members have individual, password-enabled worksheets for tracking details to review with managers who have access to all pages</li>\r\n</ul>\r\n</div>\r\n<div class=\"W25\"><img src=\"/sys_attachment.do?sys_id=2726616097774b14d3efb73de053afe3\"></div>\r\n</div>\r\n<div>\r\n<p>ServiceNow is the first true enterprise environment I have had the pleasure to learn, configure, and develop. I started knowing nothing (or <em>extremely</em> little at the very least) and at the deep end with no training or mentoring. \"Figuring it out\" became what I did. Eventually, I made it to the ServiceNow University so I could get some more formal training and built myself to be someone people could trust to find a real solution to business challenges.</p>\r\n</div>\r\n<div class=\"subFlexLR\">\r\n<div class=\"W25\"><img src=\"/sys_attachment.do?sys_id=2b4c6f3397e70714d3efb73de053afeb&amp;view=true\"></div>\r\n<div class=\"W75\">\r\n<p>Some examples of things I've accomplished within ServiceNow include:</p>\r\n<ul>\r\n<li>Redesign/refactor server-side business logic intended as a framework for integrating multiple third-party ticketing systems with internal Incident processes using the sn_ws.RESTMessageV2 class in lieu of Flows and Integration Hub spokes.</li>\r\n<li>Rebuild a Service Portal using as many available OOTB components as possible to replace a legacy, highly customized portal.</li>\r\n<li>Create an internal application to replace restrictive and commonly incomplete or inaccurate SharePoint forms/lists to improve accuracy, enhance processes, automate reporting, and give greater control over data.</li>\r\n<li>Create a custom, mandatory dynamic documentation experience before teams could escalate issues.</li>\r\n<li>Implement Knowledge Blocks to replace a custom solution for reusable content within knowledge articles.</li>\r\n<li>Implement CMDB with imports done using a scheduled third-party integration to import and transform into respective CMDB tables and use within Incidents.</li>\r\n<li>Implement Platform Analytics prior to upgrading to Zurich in alignment with the upgrade automatically transitioning from the previous reporting architecture to the new architecture.</li>\r\n<li>Integrate with a third-party LMS for user provisioning and content access management.</li>\r\n</ul>\r\n</div>\r\n</div>\r\n<div>\r\n<p>At the end of the day, I want to have fun with what I'm doing. I like a bit of a challenge and will absolutely tear something down to its basic components in an attempt to discover how things actually work.</p>\r\n<p>Thank you for learning a bit about me! I hope you enjoy something I've done.</p>\r\n<div>\r\n<p style=\"text-align: center;\"><img style=\"max-width: 100%; max-height: 300px;\" src=\"/sys_attachment.do?sys_id=5807ed60973b4b14d3efb73de053af78\"></p>\r\n</div>\r\n</div>",
+		"displayValue": "<h1 style=\"text-align: center;\">About SV</h1>\n<div class=\"subFlexLR\">\n<div class=\"W75\">\n<p>Hello!</p>\n<p>I am Sable Vimes, a certified ServiceNow professional with more than 6 years of hands-on experience working on ServiceNow instances, primarily in the ITSM scope. My exposure to ServiceNow has granted me several hats including Administrator, Developer, Business Analyst, Process Owner, and Product Owner. Wearing more than one at a time is normal. Ultimately, I would like to be an architect one day.</p>\n<p>Throughout my career and positions, I taught myself various skills including HTML, CSS, JavaScript, VBA for Windows Applications, played with Batch scripting, became a go-to person for working through Excel formulas, Power BI data extraction and transformation, and so much more. If there was something that touched something I did, it kind of became a personal objective to learn more about it, how to use it, etc. In some cases, I even found or created replacement solutions for applications that were no longer going to be used internally which include:</p>\n<ul>\n<li>An entire learning management system</li>\n<li>Recording software for course development</li>\n<li>A temporary Excel interface for time-tracking complete with Clock In/Out buttons and pay period breakdowns</li>\n<li>Team Excel dashboards / workbooks configured so team members have individual, password-enabled worksheets for tracking details to review with managers who have access to all pages</li>\n</ul>\n</div>\n<div class=\"W25\"><img src=\"/sys_attachment.do?sys_id=2726616097774b14d3efb73de053afe3\"></div>\n</div>\n<div>\n<p>ServiceNow is the first true enterprise environment I have had the pleasure to learn, configure, and develop. I started knowing nothing (or <em>extremely</em> little at the very least) and at the deep end with no training or mentoring. \"Figuring it out\" became what I did. Eventually, I made it to the ServiceNow University so I could get some more formal training and built myself to be someone people could trust to find a real solution to business challenges.</p>\n</div>\n<div class=\"subFlexLR\">\n<div class=\"W25\"><img src=\"/sys_attachment.do?sys_id=2b4c6f3397e70714d3efb73de053afeb&amp;view=true\"></div>\n<div class=\"W75\">\n<p>Some examples of things I've accomplished within ServiceNow include:</p>\n<ul>\n<li>Redesign/refactor server-side business logic intended as a framework for integrating multiple third-party ticketing systems with internal Incident processes using the sn_ws.RESTMessageV2 class in lieu of Flows and Integration Hub spokes.</li>\n<li>Rebuild a Service Portal using as many available OOTB components as possible to replace a legacy, highly customized portal.</li>\n<li>Create an internal application to replace restrictive and commonly incomplete or inaccurate SharePoint forms/lists to improve accuracy, enhance processes, automate reporting, and give greater control over data.</li>\n<li>Create a custom, mandatory dynamic documentation experience before teams could escalate issues.</li>\n<li>Implement Knowledge Blocks to replace a custom solution for reusable content within knowledge articles.</li>\n<li>Implement CMDB with imports done using a scheduled third-party integration to import and transform into respective CMDB tables and use within Incidents.</li>\n<li>Implement Platform Analytics prior to upgrading to Zurich in alignment with the upgrade automatically transitioning from the previous reporting architecture to the new architecture.</li>\n<li>Integrate with a third-party LMS for user provisioning and content access management.</li>\n</ul>\n</div>\n</div>\n<div>\n<p>At the end of the day, I want to have fun with what I'm doing. I like a bit of a challenge and will absolutely tear something down to its basic components in an attempt to discover how things actually work.</p>\n<p>Thank you for learning a bit about me! I hope you enjoy something I've done.</p>\n<div>\n<p style=\"text-align: center;\"><img style=\"max-width: 100%; max-height: 300px;\" src=\"/sys_attachment.do?sys_id=5807ed60973b4b14d3efb73de053af78\"></p>\n</div>\n</div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=3867eae897738b14d3efb73de053afe3"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <name>sp_instance_3867eae897738b14d3efb73de053afe3</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_placeholder_dimensions&gt;false&lt;/advanced_placeholder_dimensions&gt;&lt;async_load&gt;false&lt;/async_load&gt;&lt;async_load_device_type&gt;desktop,tablet,mobile&lt;/async_load_device_type&gt;&lt;async_load_trigger&gt;viewport&lt;/async_load_trigger&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css&gt;/*.subFlexLR {&amp;#13;
+  display: flex;&amp;#13;
+  gap: 10px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.W75 {&amp;#13;
+  max-width: 75%;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.W25 {&amp;#13;
+  max-width: 25%;&amp;#13;
+  margin-right: auto;&amp;#13;
+  &amp;gt; img {&amp;#13;
+    margin-right: auto;&amp;#13;
+    margin-left: auto;&amp;#13;
+    height: 0;&amp;#13;
+    min-height: 100%&amp;#13;
+}*/&lt;/css&gt;&lt;glyph&gt;empty&lt;/glyph&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;placeholder_dimensions&gt;{&amp;#13;	"mobile": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"desktop": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"tablet": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	}&amp;#13;}&lt;/placeholder_dimensions&gt;&lt;placeholder_dimensions_script&gt;&lt;![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]&gt;&lt;/placeholder_dimensions_script&gt;&lt;placeholder_template&gt;&amp;lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&amp;lt;div ng-if="options.maxRowCount === 10"&amp;gt;&amp;lt;/div&amp;gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&amp;gt;
+	&amp;lt;div class="skeleton-container"&amp;gt;
+	&amp;lt;!-- Header Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-header"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;!-- Body Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line small"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line medium"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/placeholder_template&gt;&lt;preserve_placeholder_size&gt;false&lt;/preserve_placeholder_size&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;1357eae897738b14d3efb73de053afd7&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sable.vimes&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-05 00:36:02&lt;/sys_created_on&gt;&lt;sys_id&gt;3867eae897738b14d3efb73de053afe3&lt;/sys_id&gt;&lt;sys_mod_count&gt;22&lt;/sys_mod_count&gt;&lt;sys_name&gt;SVAboutFull&lt;/sys_name&gt;&lt;sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0"&gt;cf9cfc1b97ab8fd0d3efb73de053af56&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="SV - Public Demo Portal"&gt;cf9cfc1b97ab8fd0d3efb73de053af56&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_3867eae897738b14d3efb73de053afe3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sable.vimes&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-05 18:29:14&lt;/sys_updated_on&gt;&lt;title&gt;SVAboutFull&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;h1 style=\"text-align: center;\"&gt;About SV&lt;/h1&gt;\r\n&lt;div class=\"subFlexLR\"&gt;\r\n&lt;div class=\"W75\"&gt;\r\n&lt;p&gt;Hello!&lt;/p&gt;\r\n&lt;p&gt;I am Sable Vimes, a certified ServiceNow professional with more than 6 years of hands-on experience working on ServiceNow instances, primarily in the ITSM scope. My exposure to ServiceNow has granted me several hats including Administrator, Developer, Business Analyst, Process Owner, and Product Owner. Wearing more than one at a time is normal. Ultimately, I would like to be an architect one day.&lt;/p&gt;\r\n&lt;p&gt;Throughout my career and positions, I taught myself various skills including HTML, CSS, JavaScript, VBA for Windows Applications, played with Batch scripting, became a go-to person for working through Excel formulas, Power BI data extraction and transformation, and so much more. If there was something that touched something I did, it kind of became a personal objective to learn more about it, how to use it, etc. In some cases, I even found or created replacement solutions for applications that were no longer going to be used internally which include:&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;An entire learning management system&lt;/li&gt;\r\n&lt;li&gt;Recording software for course development&lt;/li&gt;\r\n&lt;li&gt;A temporary Excel interface for time-tracking complete with Clock In/Out buttons and pay period breakdowns&lt;/li&gt;\r\n&lt;li&gt;Team Excel dashboards / workbooks configured so team members have individual, password-enabled worksheets for tracking details to review with managers who have access to all pages&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n&lt;div class=\"W25\"&gt;&lt;img src=\"/sys_attachment.do?sys_id=2726616097774b14d3efb73de053afe3\"&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;div&gt;\r\n&lt;p&gt;ServiceNow is the first true enterprise environment I have had the pleasure to learn, configure, and develop. I started knowing nothing (or &lt;em&gt;extremely&lt;/em&gt; little at the very least) and at the deep end with no training or mentoring. \"Figuring it out\" became what I did. Eventually, I made it to the ServiceNow University so I could get some more formal training and built myself to be someone people could trust to find a real solution to business challenges.&lt;/p&gt;\r\n&lt;/div&gt;\r\n&lt;div class=\"subFlexLR\"&gt;\r\n&lt;div class=\"W25\"&gt;&lt;img src=\"/sys_attachment.do?sys_id=2b4c6f3397e70714d3efb73de053afeb&amp;amp;view=true\"&gt;&lt;/div&gt;\r\n&lt;div class=\"W75\"&gt;\r\n&lt;p&gt;Some examples of things I've accomplished within ServiceNow include:&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Redesign/refactor server-side business logic intended as a framework for integrating multiple third-party ticketing systems with internal Incident processes using the sn_ws.RESTMessageV2 class in lieu of Flows and Integration Hub spokes.&lt;/li&gt;\r\n&lt;li&gt;Rebuild a Service Portal using as many available OOTB components as possible to replace a legacy, highly customized portal.&lt;/li&gt;\r\n&lt;li&gt;Create an internal application to replace restrictive and commonly incomplete or inaccurate SharePoint forms/lists to improve accuracy, enhance processes, automate reporting, and give greater control over data.&lt;/li&gt;\r\n&lt;li&gt;Create a custom, mandatory dynamic documentation experience before teams could escalate issues.&lt;/li&gt;\r\n&lt;li&gt;Implement Knowledge Blocks to replace a custom solution for reusable content within knowledge articles.&lt;/li&gt;\r\n&lt;li&gt;Implement CMDB with imports done using a scheduled third-party integration to import and transform into respective CMDB tables and use within Incidents.&lt;/li&gt;\r\n&lt;li&gt;Implement Platform Analytics prior to upgrading to Zurich in alignment with the upgrade automatically transitioning from the previous reporting architecture to the new architecture.&lt;/li&gt;\r\n&lt;li&gt;Integrate with a third-party LMS for user provisioning and content access management.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;div&gt;\r\n&lt;p&gt;At the end of the day, I want to have fun with what I'm doing. I like a bit of a challenge and will absolutely tear something down to its basic components in an attempt to discover how things actually work.&lt;/p&gt;\r\n&lt;p&gt;Thank you for learning a bit about me! I hope you enjoy something I've done.&lt;/p&gt;\r\n&lt;div&gt;\r\n&lt;p style=\"text-align: center;\"&gt;&lt;img style=\"max-width: 100%; max-height: 300px;\" src=\"/sys_attachment.do?sys_id=5807ed60973b4b14d3efb73de053af78\"&gt;&lt;/p&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+		"displayValue": "&lt;h1 style=\"text-align: center;\"&gt;About SV&lt;/h1&gt;\n&lt;div class=\"subFlexLR\"&gt;\n&lt;div class=\"W75\"&gt;\n&lt;p&gt;Hello!&lt;/p&gt;\n&lt;p&gt;I am Sable Vimes, a certified ServiceNow professional with more than 6 years of hands-on experience working on ServiceNow instances, primarily in the ITSM scope. My exposure to ServiceNow has granted me several hats including Administrator, Developer, Business Analyst, Process Owner, and Product Owner. Wearing more than one at a time is normal. Ultimately, I would like to be an architect one day.&lt;/p&gt;\n&lt;p&gt;Throughout my career and positions, I taught myself various skills including HTML, CSS, JavaScript, VBA for Windows Applications, played with Batch scripting, became a go-to person for working through Excel formulas, Power BI data extraction and transformation, and so much more. If there was something that touched something I did, it kind of became a personal objective to learn more about it, how to use it, etc. In some cases, I even found or created replacement solutions for applications that were no longer going to be used internally which include:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;An entire learning management system&lt;/li&gt;\n&lt;li&gt;Recording software for course development&lt;/li&gt;\n&lt;li&gt;A temporary Excel interface for time-tracking complete with Clock In/Out buttons and pay period breakdowns&lt;/li&gt;\n&lt;li&gt;Team Excel dashboards / workbooks configured so team members have individual, password-enabled worksheets for tracking details to review with managers who have access to all pages&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;\n&lt;div class=\"W25\"&gt;&lt;img src=\"/sys_attachment.do?sys_id=2726616097774b14d3efb73de053afe3\"&gt;&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;p&gt;ServiceNow is the first true enterprise environment I have had the pleasure to learn, configure, and develop. I started knowing nothing (or &lt;em&gt;extremely&lt;/em&gt; little at the very least) and at the deep end with no training or mentoring. \"Figuring it out\" became what I did. Eventually, I made it to the ServiceNow University so I could get some more formal training and built myself to be someone people could trust to find a real solution to business challenges.&lt;/p&gt;\n&lt;/div&gt;\n&lt;div class=\"subFlexLR\"&gt;\n&lt;div class=\"W25\"&gt;&lt;img src=\"/sys_attachment.do?sys_id=2b4c6f3397e70714d3efb73de053afeb&amp;amp;view=true\"&gt;&lt;/div&gt;\n&lt;div class=\"W75\"&gt;\n&lt;p&gt;Some examples of things I've accomplished within ServiceNow include:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Redesign/refactor server-side business logic intended as a framework for integrating multiple third-party ticketing systems with internal Incident processes using the sn_ws.RESTMessageV2 class in lieu of Flows and Integration Hub spokes.&lt;/li&gt;\n&lt;li&gt;Rebuild a Service Portal using as many available OOTB components as possible to replace a legacy, highly customized portal.&lt;/li&gt;\n&lt;li&gt;Create an internal application to replace restrictive and commonly incomplete or inaccurate SharePoint forms/lists to improve accuracy, enhance processes, automate reporting, and give greater control over data.&lt;/li&gt;\n&lt;li&gt;Create a custom, mandatory dynamic documentation experience before teams could escalate issues.&lt;/li&gt;\n&lt;li&gt;Implement Knowledge Blocks to replace a custom solution for reusable content within knowledge articles.&lt;/li&gt;\n&lt;li&gt;Implement CMDB with imports done using a scheduled third-party integration to import and transform into respective CMDB tables and use within Incidents.&lt;/li&gt;\n&lt;li&gt;Implement Platform Analytics prior to upgrading to Zurich in alignment with the upgrade automatically transitioning from the previous reporting architecture to the new architecture.&lt;/li&gt;\n&lt;li&gt;Integrate with a third-party LMS for user provisioning and content access management.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;p&gt;At the end of the day, I want to have fun with what I'm doing. I like a bit of a challenge and will absolutely tear something down to its basic components in an attempt to discover how things actually work.&lt;/p&gt;\n&lt;p&gt;Thank you for learning a bit about me! I hope you enjoy something I've done.&lt;/p&gt;\n&lt;div&gt;\n&lt;p style=\"text-align: center;\"&gt;&lt;img style=\"max-width: 100%; max-height: 300px;\" src=\"/sys_attachment.do?sys_id=5807ed60973b4b14d3efb73de053af78\"&gt;&lt;/p&gt;\n&lt;/div&gt;\n&lt;/div&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=3867eae897738b14d3efb73de053afe3"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1266461426</payload_hash>
+        <record_name>SVAboutFull</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-05 18:29:14</sys_created_on>
+        <sys_id>210d96b897730f14d3efb73de053afb0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a10d53bf950000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-05 18:29:14</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>ed0d96b879730f14cda5dd2e789360ae</update_guid>
+        <update_guid_history>ed0d96b879730f14cda5dd2e789360ae:-1266461426,416ade3496730f1445afceb6d6df2a3b:-372274556,bc5396b482330f141c77a9a33f1f9fb6:767683137,ec925e34cf330f144af1df3486641850:510774385,417152b0de330f14a7403804902be2f4:1326193157,b84152b02f330f1444b5a63b99b99466:-151741497,d3e882b092bfcb14139fb06d258ac6f1:-971065555,d5888e7c23bfcb1496e37216ef6f684a:1925430163,634882bc7cbfcb141e509db6758019fd:-204711478,cdc679b8243fcb1482c258123d4f9fde:3989366,b346f978483fcb14c7abce4973f1cb84:1875269750,9116bd38683fcb1447606060dbe853e8:-1596679850,a3957138ca3fcb1408a88a8f2010bc78:1539821216,1a4539f41b3fcb14101f2411d7ad5657:-1208699229,d0da62e0ddb38b14007b3ef4756b571d:-18901043,004a2a609cb38b14fda3cc19eac89636:-744269835,5488e2ac04738b14cfb39732f1f4e5e0:1425939281,386822ac21738b142b292c05ce44f409:1374814260,a8586e6c45738b14b33ed74d06df8d32:1216619638,19e72ea804738b143d4844f51cc0db60:1084618944,fbc7ea2cf5738b14909786678da6c354:1908336928,86a7a62c4c738b14cbc27a9ba25b4085:1961910330,3867eae8a0738b14a44fe160699a6ae6:-766342202</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="SVAboutFull">d3bd9ef897730f14d3efb73de053afd7</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-05 18:32:22</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>15f59affa6bc42c08a94eed1ce4d6100</sys_id>
+        <sys_metadata>3867eae897738b14d3efb73de053afe3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SVAboutFull</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>sp_instance_3867eae897738b14d3efb73de053afe3</sys_update_name>
+        <sys_update_version display_value="sp_instance_3867eae897738b14d3efb73de053afe3">210d96b897730f14d3efb73de053afb0</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-05 18:32:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

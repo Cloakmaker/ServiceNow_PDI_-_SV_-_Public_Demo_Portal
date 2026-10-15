@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="DELETE">
+        <sc_cat_item display_value="Copy of Report Portal Issue">7e08a1e597ff4354d3efb73de053af36</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-07 22:34:07</sys_created_on>
+        <sys_id>0048e9e597ff4354d3efb73de053af98</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Report Portal Issue.Any User</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_0048e9e597ff4354d3efb73de053af98</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-07 22:34:07</sys_updated_on>
+        <user_criteria display_value="Any User">fb1166d64fff0200086eeed18110c7ab</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <name>sc_cat_item_user_criteria_mtom_0048e9e597ff4354d3efb73de053af98</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom"><sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE"><sc_cat_item display_value="Copy of Report Portal Issue">7e08a1e597ff4354d3efb73de053af36</sc_cat_item><sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name><sys_created_by>sable.vimes</sys_created_by><sys_created_on>2026-10-07 22:34:07</sys_created_on><sys_id>0048e9e597ff4354d3efb73de053af98</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Copy of Report Portal Issue.Any User</sys_name><sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package><sys_policy/><sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope><sys_update_name>sc_cat_item_user_criteria_mtom_0048e9e597ff4354d3efb73de053af98</sys_update_name><sys_updated_by>sable.vimes</sys_updated_by><sys_updated_on>2026-10-07 22:34:07</sys_updated_on><user_criteria display_value="Any User">fb1166d64fff0200086eeed18110c7ab</user_criteria></sc_cat_item_user_criteria_mtom></record_update>]]></payload>
+        <payload_hash>2135299334</payload_hash>
+        <record_name>Copy of Report Portal Issue.Any User</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-07 22:34:07</sys_created_on>
+        <sys_id>8848e9e597ff4354d3efb73de053af9d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a11880a9820000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-07 22:34:07</sys_updated_on>
+        <type>Catalog Item Available for</type>
+        <update_guid>4848e9e5faff4354aadb488af67deb9c</update_guid>
+        <update_guid_history>4848e9e5faff4354aadb488af67deb9c:2135299334</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Report Portal Issue.Any User">f04392bb97f34b10d3efb73de053aff4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-15 01:28:22</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_user_criteria_mtom">sc_cat_item_user_criteria_mtom</sys_db_object>
+        <sys_id>1138fc5b7a64474ea67ae5750e727364</sys_id>
+        <sys_metadata>0048e9e597ff4354d3efb73de053af98</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Report Portal Issue.Any User</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_0048e9e597ff4354d3efb73de053af98</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_user_criteria_mtom_0048e9e597ff4354d3efb73de053af98">8848e9e597ff4354d3efb73de053af9d</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-15 01:28:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

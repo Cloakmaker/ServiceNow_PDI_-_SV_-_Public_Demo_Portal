@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="INSERT_OR_UPDATE">
+        <id>svpdpspPolarisModalLogin</id>
+        <sp_widget display_value="SVPDP Portal Polaris Header">8fc075f597b30754d3efb73de053af92</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-08 17:52:25</sys_created_on>
+        <sys_id>8821bdb997b30754d3efb73de053af8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>svpdpspPolarisModalLogin</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_ng_template_8821bdb997b30754d3efb73de053af8e</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-08 17:52:25</sys_updated_on>
+        <template><![CDATA[<div class="login_widget">
+  <sp-widget widget="data.loginWidget"></sp-widget>
+  <style>
+    .modal-content { border: 0px solid transparent; }
+  </style>
+</div>]]></template>
+    </sp_ng_template>
+</record_update>

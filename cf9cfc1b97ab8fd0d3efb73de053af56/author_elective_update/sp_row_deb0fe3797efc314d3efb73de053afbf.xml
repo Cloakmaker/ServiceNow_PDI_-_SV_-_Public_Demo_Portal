@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <aria_label/>
+        <class_name/>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_column/>
+        <sp_container display_value="SV Home - Container 2">2ea0be3797efc314d3efb73de053af57</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-02 17:21:23</sys_created_on>
+        <sys_id>deb0fe3797efc314d3efb73de053afbf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_row_deb0fe3797efc314d3efb73de053afbf</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-04 19:11:06</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <name>sp_row_deb0fe3797efc314d3efb73de053afbf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><aria_label/><class_name/><order>2</order><semantic_tag/><sp_column/><sp_container display_value="SV Home - Container 2">2ea0be3797efc314d3efb73de053af57</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>sable.vimes</sys_created_by><sys_created_on>2026-10-02 17:21:23</sys_created_on><sys_id>deb0fe3797efc314d3efb73de053afbf</sys_id><sys_mod_count>1</sys_mod_count><sys_name>2</sys_name><sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package><sys_policy/><sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope><sys_update_name>sp_row_deb0fe3797efc314d3efb73de053afbf</sys_update_name><sys_updated_by>sable.vimes</sys_updated_by><sys_updated_on>2026-10-04 19:11:06</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>2060368699</payload_hash>
+        <record_name>2</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-04 19:11:06</sys_created_on>
+        <sys_id>090dd120973b4b14d3efb73de053af51</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a10853b7390000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-04 19:11:06</sys_updated_on>
+        <type>Row</type>
+        <update_guid>050dd1203c3b4b1455736468e0fc1b50</update_guid>
+        <update_guid_history>050dd1203c3b4b1455736468e0fc1b50:2060368699,1eb0fe3737efc31463e3b080ee03e7c2:1570514489</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="2">7db1227497b30f14d3efb73de053afb5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-05 18:49:44</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>64bdcaa8ad254626b2fd0b0e531eae64</sys_id>
+        <sys_metadata>deb0fe3797efc314d3efb73de053afbf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>sp_row_deb0fe3797efc314d3efb73de053afbf</sys_update_name>
+        <sys_update_version display_value="sp_row_deb0fe3797efc314d3efb73de053afbf">090dd120973b4b14d3efb73de053af51</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-05 18:49:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

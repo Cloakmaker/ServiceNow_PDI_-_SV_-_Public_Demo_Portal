@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new">
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
-        <attributes/>
-        <cat_item display_value="Report Portal Issue">274cafc1977f8f14d3efb73de053af5b</cat_item>
+        <attributes>max_length=50</attributes>
+        <cat_item/>
         <category/>
         <choice_direction>down</choice_direction>
         <choice_field/>
         <choice_table/>
         <conversational_label/>
-        <create_roles/>
+        <create_roles>public</create_roles>
         <default_html_value/>
         <default_value/>
         <delete_roles/>
@@ -42,26 +42,26 @@
         <lookup_value/>
         <macro/>
         <macroponent/>
-        <mandatory>false</mandatory>
+        <mandatory>true</mandatory>
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
-        <mask_use_encryption>true</mask_use_encryption>
-        <name>video</name>
+        <mask_use_encryption>false</mask_use_encryption>
+        <name>last_name</name>
         <no_auto_populate_also_request_for>false</no_auto_populate_also_request_for>
         <not_available_conversation>false</not_available_conversation>
-        <order>300</order>
+        <order>200</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Video</question_text>
+        <question_text>Enter your last name.</question_text>
         <read_only>false</read_only>
-        <read_roles/>
+        <read_roles>public</read_roles>
         <read_script/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
-        <record_producer_table>incident</record_producer_table>
+        <record_producer_table/>
         <reference/>
         <reference_qual/>
         <reference_qual_condition/>
@@ -82,20 +82,20 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>sable.vimes</sys_created_by>
-        <sys_created_on>2026-10-06 19:07:05</sys_created_on>
-        <sys_id>653f6f89977f8f14d3efb73de053af0d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Video</sys_name>
-        <sys_package/>
+        <sys_created_on>2026-10-08 20:32:39</sys_created_on>
+        <sys_id>a606127997f70754d3efb73de053affd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Enter your last name.</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
-        <sys_update_name>item_option_new_653f6f89977f8f14d3efb73de053af0d</sys_update_name>
+        <sys_update_name>item_option_new_a606127997f70754d3efb73de053affd</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-06 19:09:01</sys_updated_on>
+        <sys_updated_on>2026-10-08 20:32:39</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
-        <type>33</type>
+        <type>6</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -109,24 +109,24 @@
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <visible_summary>true</visible_summary>
-        <write_roles/>
+        <write_roles>public</write_roles>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=653f6f89977f8f14d3efb73de053af0d"/>
-    <fx_price action="delete_multiple" query="id=653f6f89977f8f14d3efb73de053af0d"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=a606127997f70754d3efb73de053affd"/>
+    <fx_price action="delete_multiple" query="id=a606127997f70754d3efb73de053affd"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>653f6f89977f8f14d3efb73de053af0d</id>
+        <id>a606127997f70754d3efb73de053affd</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>sable.vimes</sys_created_by>
-        <sys_created_on>2026-10-06 19:07:05</sys_created_on>
-        <sys_id>b14f23c9977f8f14d3efb73de053af00</sys_id>
+        <sys_created_on>2026-10-08 20:32:39</sys_created_on>
+        <sys_id>6606d67997f70754d3efb73de053afee</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-06 19:07:05</sys_updated_on>
+        <sys_updated_on>2026-10-08 20:32:39</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -134,16 +134,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>653f6f89977f8f14d3efb73de053af0d</id>
+        <id>a606127997f70754d3efb73de053affd</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>sable.vimes</sys_created_by>
-        <sys_created_on>2026-10-06 19:07:05</sys_created_on>
-        <sys_id>354fef89977f8f14d3efb73de053afff</sys_id>
+        <sys_created_on>2026-10-08 20:32:39</sys_created_on>
+        <sys_id>2e06d67997f70754d3efb73de053afed</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-06 19:07:05</sys_updated_on>
+        <sys_updated_on>2026-10-08 20:32:39</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

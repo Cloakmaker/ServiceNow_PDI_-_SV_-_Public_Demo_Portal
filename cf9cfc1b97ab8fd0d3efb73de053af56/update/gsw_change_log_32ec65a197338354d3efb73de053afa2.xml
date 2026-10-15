@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="gsw_change_log">
+    <gsw_change_log action="INSERT_OR_UPDATE">
+        <change_date>2026-10-07 22:54:30</change_date>
+        <changed_by display_value="Sable Vimes">71fa1d09973e4350d3efb73de053afdb</changed_by>
+        <content display_value="Table configuration">b0a1cfe97301230034921c86fbf6a717</content>
+        <related_change_log_entry/>
+        <related_task_entry/>
+        <sys_class_name>gsw_change_log</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-07 22:54:30</sys_created_on>
+        <sys_id>32ec65a197338354d3efb73de053afa2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2026-10-07 22:54:30</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>gsw_change_log_32ec65a197338354d3efb73de053afa2</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-07 22:54:30</sys_updated_on>
+        <type>4</type>
+    </gsw_change_log>
+</record_update>

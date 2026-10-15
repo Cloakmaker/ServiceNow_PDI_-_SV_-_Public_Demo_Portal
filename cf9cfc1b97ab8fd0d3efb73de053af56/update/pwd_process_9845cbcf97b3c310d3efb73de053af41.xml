@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_process">
+    <pwd_process action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <allow_verification_choice>false</allow_verification_choice>
+        <apply_to_all_users>true</apply_to_all_users>
+        <auto_gen_password>false</auto_gen_password>
+        <change>true</change>
+        <cred_store display_value="Local ServiceNow Instance">6e51033fbf020100710071a7bf0739e0</cred_store>
+        <description>SV PDP Override for "Default Self Service" - PWR uses the new password reset framework, but the flow/UI stays the same.</description>
+        <display_captcha>true</display_captcha>
+        <display_password>false</display_password>
+        <email_password_reset_url>true</email_password_reset_url>
+        <enable_security_score_notification>false</enable_security_score_notification>
+        <enabled_on_chatbot>false</enabled_on_chatbot>
+        <enrollment_reminder>false</enrollment_reminder>
+        <expiration_run_period/>
+        <expiration_run_start>2026-10-12 21:11:20</expiration_run_start>
+        <expiration_run_time>1970-01-01 06:00:00</expiration_run_time>
+        <expiration_run_time_zone>floating</expiration_run_time_zone>
+        <expiration_schedule_frequency>daily</expiration_schedule_frequency>
+        <expiration_warn_days>10</expiration_warn_days>
+        <identification_type>fc7bf2b3bf220100710071a7bf0739b4</identification_type>
+        <label>SV PDP Default Self Service</label>
+        <min_verifications>1</min_verifications>
+        <name>SV PDP Default Self Service</name>
+        <password_needs_reset>false</password_needs_reset>
+        <post_processor/>
+        <process_owner/>
+        <public_access>true</public_access>
+        <public_url/>
+        <pwd_validity_days>90</pwd_validity_days>
+        <redirect_url/>
+        <reset>true</reset>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_start>2026-10-12 21:11:20</run_start>
+        <run_time>1970-01-01 06:00:00</run_time>
+        <run_type>weekly</run_type>
+        <security_score>72</security_score>
+        <send_email>false</send_email>
+        <send_expiration_reminder>false</send_expiration_reminder>
+        <sender_alias/>
+        <sys_class_name>pwd_process</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:12:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9845cbcf97b3c310d3efb73de053af41</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>SV PDP Default Self Service</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>pwd_process_9845cbcf97b3c310d3efb73de053af41</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:22:31</sys_updated_on>
+        <unlock_account>false</unlock_account>
+        <url_suffix>sv_pdp_default</url_suffix>
+        <user_experience_entry/>
+        <user_experience_failure/>
+        <user_experience_footer/>
+        <user_experience_header/>
+        <user_experience_success/>
+    </pwd_process>
+    <sys_translated_text action="delete_multiple" query="documentkey=9845cbcf97b3c310d3efb73de053af41"/>
+</record_update>
