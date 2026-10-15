@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="dd2a2e009748db10d3efb73de053af9a" extends="kb_knowledge" label="Technical" max_length="40" name="u_kb_template_technical" type="collection">
+        <element label="Requirements" mandatory="true" max_length="8000" name="x_885217_sv_publ_0_u_kb_requirements" text_index="true" type="html"/>
+        <element label="Technical" mandatory="true" max_length="8000" name="x_885217_sv_publ_0_u_kb_technical" text_index="true" type="html"/>
+        <element label="Overview" mandatory="true" max_length="8000" name="x_885217_sv_publ_0_u_kb_overview" text_index="true" type="html"/>
+    </element>
+</database>

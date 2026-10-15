@@ -1433,14 +1433,14 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-08 17:49:56</sys_created_on>
         <sys_id>8fc075f597b30754d3efb73de053af92</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>SVPDP Portal Polaris Header</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_header_footer_8fc075f597b30754d3efb73de053af92</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-13 18:32:05</sys_updated_on>
+        <sys_updated_on>2026-10-15 19:06:12</sys_updated_on>
         <template><![CDATA[<!-- Nav bar menu items starts-->
 <nav class="navbar-inverse instance-{{c.data.instanceId}}" aria-label="Primary" role="navigation">
   <!-- Piece above searchbar -->
@@ -1462,6 +1462,7 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
 	    <a class="navbar-brand navbar-brand-logo"
            ng-if="portal.logo && !showSearchbarOnMobile"
            href="?id={{::portal.homepage_dv}}"
+           target="_self"
            aria-label="{{::portal.title}}${ - Home Page}"
            data-toggle="tooltip"
            data-placement="bottom"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="kb_article_template_definition">
+    <kb_article_template_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <article_template display_value="Technical">df186e0c9708db10d3efb73de053af38</article_template>
+        <collapsible/>
+        <column_label>Overview</column_label>
+        <column_type>html</column_type>
+        <field_style/>
+        <heading_style/>
+        <mandatory>true</mandatory>
+        <order>100</order>
+        <preview_text/>
+        <sys_class_name>kb_article_template_definition</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-15 21:53:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fb6bea049748db10d3efb73de053af66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Overview</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>kb_article_template_definition_fb6bea049748db10d3efb73de053af66</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-15 21:53:35</sys_updated_on>
+        <table_column>x_885217_sv_publ_0_u_kb_overview</table_column>
+    </kb_article_template_definition>
+</record_update>

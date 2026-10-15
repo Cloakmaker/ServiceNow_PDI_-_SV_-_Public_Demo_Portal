@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_dynamic_route_mapping">
+    <sys_ux_dynamic_route_mapping action="INSERT_OR_UPDATE">
+        <param_payload>{
+    "external": "",
+    "fields": {
+        "sysId": "{{sys_id}}",
+        "table": "{{table}}"
+    },
+    "multiInstField": "",
+    "params": "",
+    "passiveNavigation": "",
+    "redirect": true,
+    "route": "kb_view",
+    "targetRoute": "",
+    "title": ""
+}</param_payload>
+        <route_config display_value="KC Dynamic Route Config">6f332dea4712221019f80fdc416d4368</route_config>
+        <source_component>record_page_tabs_1</source_component>
+        <sys_class_name>sys_ux_dynamic_route_mapping</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-15 21:46:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>252a22409748db10d3efb73de053af60</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>record_page_tabs_1</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sys_ux_dynamic_route_mapping_252a22409748db10d3efb73de053af60</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-15 21:46:50</sys_updated_on>
+        <table>u_kb_template_technical</table>
+    </sys_ux_dynamic_route_mapping>
+</record_update>

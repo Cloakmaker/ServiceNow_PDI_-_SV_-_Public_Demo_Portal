@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ts_table_attribute_map">
+    <ts_table_attribute_map action="INSERT_OR_UPDATE">
+        <name display_value="Index Filter">dafb788eb7103300abfad298ee11a9c9</name>
+        <sys_class_name>ts_table_attribute_map</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-15 21:46:50</sys_created_on>
+        <sys_id>a92a22409748db10d3efb73de053af3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dafb788eb7103300abfad298ee11a9c9</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>ts_table_attribute_map_a92a22409748db10d3efb73de053af3f</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-15 21:46:50</sys_updated_on>
+        <table>u_kb_template_technical</table>
+        <ts_configuration display_value="kb_knowledge">28eefe427320330003da83a9fdf6a794</ts_configuration>
+        <value>workflow_stateNOT INretired,outdated</value>
+    </ts_table_attribute_map>
+</record_update>
