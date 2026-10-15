@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_user_registration_config">
+    <sys_user_registration_config action="INSERT_OR_UPDATE">
+        <activation_error_page display_value="sn_user_activation_error">b8e54fb1533200102b12ddeeff7b1286</activation_error_page>
+        <activation_link_expiry_time>24</activation_link_expiry_time>
+        <activation_success_page display_value="sn_user_activation_success">2df447b1533200102b12ddeeff7b12c5</activation_success_page>
+        <activation_table>x_885217_sv_publ_0_user_acti_req_855467</activation_table>
+        <active>true</active>
+        <description><![CDATA[<p>Please fill out all fields on the form.</p>
+<p>Once submitted, background logic will process the information to create a new user account with the appropriate basic access for the SV Public Demo Portal.</p>
+<p>Please watch your email for instructions.</p>
+<p> </p>
+<details style="border: 1px solid black;">
+<summary style="display: list-item; width: 100%; color: white; background-color: black; padding: 10px 10px;"><strong>CLICK FOR DETAILS (NERD STUFF)</strong></summary>
+<div style="padding: 10px;">
+<p>The details herein are dependent on the configurations represented on the <em><strong>User Registration Configuration</strong></em> record.</p>
+<p><strong>BOLD</strong> text indicates fields on the configuration record while <em>ITALICIZED</em> text indicates other tables or records.</p>
+<ol style="list-style-position: inside;"><li>The record producer writes to the <strong>Registration table</strong></li><li>Users are redirected to <strong>Post registration redirect page</strong></li><li><em>User Registration Request</em> Business Rules kick off to:
+<ol style="list-style-position: inside;"><li>Update values in the registration record before insert</li><li>Trigger the <strong>User verification flow</strong>
+<ol style="list-style-position: inside;"><li>This sends an email with an activation link.</li></ol>
+</li></ol>
+</li><li>Once the activation link in the email is accessed by the user:
+<ol style="list-style-position: inside;"><li>A successful response from the <em>External User Onboarding</em> API sends the user to the <strong>Activation success page</strong></li><li>The pending <strong>Registration table</strong> request is set to Processed</li><li>A <em>User Registration Request</em><strong> </strong>Business Rule kicks off to:
+<ol style="list-style-position: inside;"><li>Create a record in the <strong>Activation table</strong></li></ol>
+</li><li>Transform maps associated with the <strong>Activation table</strong> run to:
+<ol style="list-style-position: inside;"><li>Create a <em>User [sys_user]</em> record</li><li>Create a registration user profile in the <strong>User table</strong></li></ol>
+</li><li><strong>User table</strong> Business Rules kick off to:
+<ol style="list-style-position: inside;"><li>Trigger the <strong>User onboarding flow</strong> which performs a password reset and emails reset instructions for the user</li><li>Assign the snc_external role to the user</li></ol>
+</li></ol>
+</li></ol>
+<p><strong>NOTES:</strong></p>
+<p>As this particular registration was built as part of a scoped application:</p>
+<ul style="list-style-position: inside;"><li>OOTB instances of GlideRecord <em>.queryNoDomain()</em>, GlideAggregate <em>.addOrCondition()</em>, and <em>new JSON()</em> needed to be amended so I ended up copying the OOTB flows to make the necessary changes.</li><li>OOTB event <em>email.verification.for.external.users</em> in the Global scope is inaccessible so a scoped event needed to be created.
+<ul style="list-style-position: inside;"><li>This resulted in copying the OOTB notification associated with the event for the newly scoped event.</li></ul>
+</li><li>The OOTB default Password Reset Process is not being used so I had to update the hard-coded URL pointing to that.</li><li>Although this makes an External user, a custom copy of the onboarding flow adds the necessary permissions for SV Public Demo Portal access.</li></ul>
+<p>Additional customization:</p>
+<ul style="list-style-position: inside;"><li>I never intended for an email address to be used to log in so I had to update the scripted field map that was used in creating the user_name on the sys_user record. The logic accounts for duplication by appending a number in sequence as well as for user_name max length through a method of re-querying the sys_user table to determine the next valid user_name to use.</li></ul>
+<p>Undisturbed functionality:</p>
+<ul style="list-style-position: inside;"><li>Existing users will get a notification for a password reset instead of an activation email.</li><li>Users are routed to the <strong>Activation error page</strong> if the activation fails.</li></ul>
+</div>
+</details>]]></description>
+        <enable_captcha>false</enable_captcha>
+        <enable_terms>false</enable_terms>
+        <internal_name>x_885217_sv_publ_0.SV PDP Default Registration</internal_name>
+        <name>SV PDP Default Registration</name>
+        <post_registration_redirect_page display_value="sn_user_post_registration_redirect">61638b31533200102b12ddeeff7b12f5</post_registration_redirect_page>
+        <record_producer display_value="SV PDP Default Registration">72649f8f9777c310d3efb73de053af39</record_producer>
+        <registration_label>Register</registration_label>
+        <registration_table>x_885217_sv_publ_0_user_reg_req_855467</registration_table>
+        <requires_user_verification>true</requires_user_verification>
+        <role_to_assign name="snc_external">940ba702933002009c8579b4f47ffbe2</role_to_assign>
+        <sys_class_name>sys_user_registration_config</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 22:17:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>3434178f9777c310d3efb73de053af78</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>SV PDP Default Registration</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sys_user_registration_config_3434178f9777c310d3efb73de053af78</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-15 02:19:05</sys_updated_on>
+        <terms_and_condition_url/>
+        <transform_map display_value="u_reg_xmap_894157">d764df8f9777c310d3efb73de053af76</transform_map>
+        <user_onboarding_flow display_value="SV PDP External User Onboarding">1feaafcf973bc310d3efb73de053af12</user_onboarding_flow>
+        <user_table>x_885217_sv_publ_0_self_reg_user_profile_855467</user_table>
+        <user_verification_flow display_value="SV PDP External User Verification">5d80ed3b973f0b10d3efb73de053af51</user_verification_flow>
+    </sys_user_registration_config>
+</record_update>

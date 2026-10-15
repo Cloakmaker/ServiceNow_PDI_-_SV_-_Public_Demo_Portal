@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 22:17:27</sys_created_on>
+        <sys_id>7c649b8f9777c310d3efb73de053afd4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_885217_sv_publ_0_user_reg_req_855467.user_registration_admin</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_security_acl display_value="x_885217_sv_publ_0_user_reg_req_855467">60649b8f9777c310d3efb73de053afc5</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_7c649b8f9777c310d3efb73de053afd4</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 22:17:27</sys_updated_on>
+        <sys_user_role display_value="user_registration_admin" name="user_registration_admin">fc1606a0ffe032109b16ffffffffffd7</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

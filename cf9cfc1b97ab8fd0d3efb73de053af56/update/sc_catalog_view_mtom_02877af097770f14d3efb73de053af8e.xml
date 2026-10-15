@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_catalog_view_mtom">
+    <sc_catalog_view_mtom action="INSERT_OR_UPDATE">
+        <default>true</default>
+        <sc_catalog display_value="Public Catalog">eb6776f097770f14d3efb73de053afcf</sc_catalog>
+        <sys_class_name>sc_catalog_view_mtom</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-05 20:25:03</sys_created_on>
+        <sys_id>02877af097770f14d3efb73de053af8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Public Catalog.catalog_public_catalog</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_portal_page display_value="catalog_public_catalog">c2877af097770f14d3efb73de053af8b</sys_portal_page>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sc_catalog_view_mtom_02877af097770f14d3efb73de053af8e</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-05 20:25:03</sys_updated_on>
+    </sc_catalog_view_mtom>
+</record_update>

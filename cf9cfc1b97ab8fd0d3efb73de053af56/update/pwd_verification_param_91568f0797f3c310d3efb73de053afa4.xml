@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_verification_param">
+    <pwd_verification_param action="INSERT_OR_UPDATE">
+        <description>Number of minutes before the Email verification code expires</description>
+        <name>expiry</name>
+        <order>100</order>
+        <sys_class_name>pwd_verification_param</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:19:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>91568f0797f3c310d3efb73de053afa4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>expiry</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>pwd_verification_param_91568f0797f3c310d3efb73de053afa4</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:19:25</sys_updated_on>
+        <value>10</value>
+        <verification display_value="SV PDP Email Verification">7c56074797f3c310d3efb73de053af98</verification>
+    </pwd_verification_param>
+    <sys_translated_text action="delete_multiple" query="documentkey=91568f0797f3c310d3efb73de053afa4"/>
+</record_update>

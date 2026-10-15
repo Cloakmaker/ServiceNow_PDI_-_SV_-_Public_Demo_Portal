@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_885217_sv_publ_0_user_acti_req_855467" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>555669b7977f0b10d3efb73de053af21</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>accepted_tc_date</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>d15669b7977f0b10d3efb73de053af22</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>city</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>595669b7977f0b10d3efb73de053af22</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>country</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>dd5669b7977f0b10d3efb73de053af22</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>edu_status</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>555669b7977f0b10d3efb73de053af23</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>email</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>d95669b7977f0b10d3efb73de053af23</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>first_name</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>515669b7977f0b10d3efb73de053af24</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>gender</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>9556edb7977f0b10d3efb73de053af05</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>home_phone</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>1d56edb7977f0b10d3efb73de053af05</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>import_set_run</element>
+            <list_id display_value="x_885217_sv_publ_0_user_acti_req_855467" element="NULL" name="x_885217_sv_publ_0_user_acti_req_855467" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1d5669b7977f0b10d3efb73de053af1f</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_id>9156edb7977f0b10d3efb73de053af06</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_885217_sv_publ_0_user_acti_req_855467</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>sable.vimes</sys_created_by>
+            <sys_created_on>2026-10-14 22:12:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1d5669b7977f0b10d3efb73de053af1f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_885217_sv_publ_0_user_acti_req_855467</sys_name>
+            <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+            <sys_update_name>sys_ui_list_x_885217_sv_publ_0_user_acti_req_855467_null</sys_update_name>
+            <sys_updated_by>sable.vimes</sys_updated_by>
+            <sys_updated_on>2026-10-14 22:12:03</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

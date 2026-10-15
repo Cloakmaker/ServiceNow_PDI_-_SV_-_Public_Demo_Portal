@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">850dd120973b4b14d3efb73de053af49</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-02 17:07:22</sys_created_on>
+        <sys_id>b88d22f797afc314d3efb73de053af84</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Welcome to the SV Public Demo Portal!</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_instance_b88d22f797afc314d3efb73de053af84</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-04 19:12:31</sys_updated_on>
+        <title>Welcome to the SV Public Demo Portal!</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<h1 style=\"text-align: center;\">Welcome to the SV Public Demo Portal!</h1>\r\n<h2 style=\"text-align: justify;\">Introduction</h2>\r\n<p style=\"text-align: justify;\">Hello, World!</p>\r\n<p style=\"text-align: justify;\">As funny as that bit of text might be, I truly am saying \"Hello!\" to the world. I've spent quite a bit of time poring over ServiceNow documentation and community posts for personal and professional growth, but I want to do more exploration of concepts. Thus, the birth of this fancy little demonstration!</p>\r\n<p style=\"text-align: justify;\">I am Sable Vimes, a certified ServiceNow professional with more than 6 years of hands-on experience working on ServiceNow instances, primarily in the ITSM scope. My exposure to ServiceNow has granted me several hats including Administrator, Developer, Business Analyst, Process Owner, and Product Owner. Wearing more than one at a time is normal. Ultimately, I would like to become a Certified Technical Architect.</p>\r\n<h2 style=\"text-align: justify;\">Overview</h2>\r\n<p style=\"text-align: justify;\">This Service Portal is a demonstration of experience with various ServiceNow configurations, automations, business logic, client logic, access controls, user administration, and more.</p>\r\n<p style=\"text-align: justify;\">There is a Public experience to provide a read-only demonstration (which could be considered a portfolio overview) as well as a Personal experience which people can create an account for and play around with applications I develop and make available.</p>",
+		"displayValue": "<h1 style=\"text-align: center;\">Welcome to the SV Public Demo Portal!</h1>\n<h2 style=\"text-align: justify;\">Introduction</h2>\n<p style=\"text-align: justify;\">Hello, World!</p>\n<p style=\"text-align: justify;\">As funny as that bit of text might be, I truly am saying \"Hello!\" to the world. I've spent quite a bit of time poring over ServiceNow documentation and community posts for personal and professional growth, but I want to do more exploration of concepts. Thus, the birth of this fancy little demonstration!</p>\n<p style=\"text-align: justify;\">I am Sable Vimes, a certified ServiceNow professional with more than 6 years of hands-on experience working on ServiceNow instances, primarily in the ITSM scope. My exposure to ServiceNow has granted me several hats including Administrator, Developer, Business Analyst, Process Owner, and Product Owner. Wearing more than one at a time is normal. Ultimately, I would like to become a Certified Technical Architect.</p>\n<h2 style=\"text-align: justify;\">Overview</h2>\n<p style=\"text-align: justify;\">This Service Portal is a demonstration of experience with various ServiceNow configurations, automations, business logic, client logic, access controls, user administration, and more.</p>\n<p style=\"text-align: justify;\">There is a Public experience to provide a read-only demonstration (which could be considered a portfolio overview) as well as a Personal experience which people can create an account for and play around with applications I develop and make available.</p>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=b88d22f797afc314d3efb73de053af84"/>
+</record_update>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page_route_map">
+    <sp_page_route_map action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <order>10</order>
+        <portals>ebcd3cdb97ab8fd0d3efb73de053af30</portals>
+        <roles/>
+        <route_from_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</route_from_page>
+        <route_to_page display_value="svpdp_sc_cat_item">51e6485d9733cf14d3efb73de053af8f</route_to_page>
+        <short_description>SV PDP SC Cat Item</short_description>
+        <sys_class_name>sp_page_route_map</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-06 22:04:53</sys_created_on>
+        <sys_id>42d7501597f3cf14d3efb73de053af89</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>9f12251147132100ba13a5554ee490f4</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_page_route_map_42d7501597f3cf14d3efb73de053af89</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-13 22:43:49</sys_updated_on>
+    </sp_page_route_map>
+</record_update>
