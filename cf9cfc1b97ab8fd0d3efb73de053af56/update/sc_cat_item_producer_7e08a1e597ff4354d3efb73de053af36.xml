@@ -86,6 +86,7 @@
 current.caller_id = gs.getUserID();
 current.contact_type = "self-service";
 current.short_description = "SV PDP Issue";
+current.cmdb_ci = "2d817f5f97fb4710d3efb73de053af2f";
 current.work_notes = buildNotes();
 
 if (!gs.isLoggedIn()) {
@@ -97,7 +98,7 @@ if (!gs.isLoggedIn()) {
 
 function buildNotes() {
 	var notes = [
-		"Contact method: " + producer.contact_method
+		"Contact method: " + producer.contact_method.getDisplayValue()
 	];
 
 	if (producer.contact_method != "no_contact") {
@@ -116,14 +117,14 @@ function buildNotes() {
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-07 22:33:12</sys_created_on>
         <sys_id>7e08a1e597ff4354d3efb73de053af36</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Report Portal Issue</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sc_cat_item_producer_7e08a1e597ff4354d3efb73de053af36</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-10-15 02:10:59</sys_updated_on>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-15 18:47:08</sys_updated_on>
         <table_name>incident</table_name>
         <taxonomy_topic/>
         <template/>
@@ -131,7 +132,7 @@ function buildNotes() {
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>57</version>
+        <version>59</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
