@@ -1,258 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
     <sp_header_footer action="INSERT_OR_UPDATE">
         <category>standard</category>
-        <client_script><![CDATA[function pspHeaderController($rootScope, $scope, $window, spUtil, $location, $uibModal, cabrillo, $timeout, i18n, spContextManager,spAriaUtil) {
-    var c = this;
-	var userOptionsMessage=i18n.getMessage('User options: {userName}');
-	c.userLabel = userOptionsMessage.replace('{userName}',$scope.user.name);
-    $scope.avatarProfile = {
+        <client_script><![CDATA[function pspHeaderController($rootScope, $scope, $window, spUtil, $location, $uibModal, cabrillo, $timeout, i18n, spContextManager, spAriaUtil) {
+	var c = this;
+	var userOptionsMessage = i18n.getMessage('User options: {userName}');
+	c.userLabel = userOptionsMessage.replace('{userName}', $scope.user.name);
+	$scope.avatarProfile = {
 		userID: $scope.user.sys_id,
 		name: $scope.user.name,
 		initials: $window.NOW.user_initials
-	  };
-	  if ($window.NOW.user_avatar) {
+	};
+	if ($window.NOW.user_avatar) {
 		$scope.avatarProfile.userImage = $window.NOW.user_avatar;
-	  }
-    // Events fired from/to $rootScope for responsive mobile view.
-    c.SHOW_MOBILE_MEGA_MENU = 'showMobileMegaMenu';
-    c.SHOW_MOBILE_MENU_ON_DESKTOP = 'showMobileMenuOnDesktop';
-    c.TOGGLE_MOBILE_MENU_VISIBILITY = 'toggleMobileMenuVisibility';
+	}
+	// Events fired from/to $rootScope for responsive mobile view.
+	c.SHOW_MOBILE_MEGA_MENU = 'showMobileMegaMenu';
+	c.SHOW_MOBILE_MENU_ON_DESKTOP = 'showMobileMenuOnDesktop';
+	c.TOGGLE_MOBILE_MENU_VISIBILITY = 'toggleMobileMenuVisibility';
 
-    $scope.showSearchBar = true;
-    $scope.userID = $scope.user.sys_id;
-    $scope.popupType = c.data.isMobile ? 'collapse' : 'dropdown';
-    $scope.expanded = false;
-    $scope.isMobileViewOnDesktopExpanded = false;
+	$scope.showSearchBar = true;
+	$scope.userID = $scope.user.sys_id;
+	$scope.popupType = c.data.isMobile ? 'collapse' : 'dropdown';
+	$scope.expanded = false;
+	$scope.isMobileViewOnDesktopExpanded = false;
 	var flag = 0;
-    // $scope.loadingIndicator = $rootScope.loadingIndicator;
+	// $scope.loadingIndicator = $rootScope.loadingIndicator;
 
-    /* Below 2 scope variables (showMobileMenuOnDesktop, showMobileMegaMenu) have counterparts in EC Navigation widget also.
-     So whenever we set these variables, make sure to emit an event on rootScope to update them in the former widget as well. */
+	/* Below 2 scope variables (showMobileMenuOnDesktop, showMobileMegaMenu) have counterparts in EC Navigation widget also.
+	 So whenever we set these variables, make sure to emit an event on rootScope to update them in the former widget as well. */
 
-    // Determines whether to show mobile view on desktop due to oveflow of items in sub navigation bar of header.
-    $scope.showMobileMenuOnDesktop = false;
-    // Used to hide global navigation tools on mobile while showing mega menu topics in right panel.
-    $scope.showMobileMegaMenu = false;
+	// Determines whether to show mobile view on desktop due to oveflow of items in sub navigation bar of header.
+	$scope.showMobileMenuOnDesktop = false;
+	// Used to hide global navigation tools on mobile while showing mega menu topics in right panel.
+	$scope.showMobileMegaMenu = false;
 
-    c.MOBILE_DEVICE_SCREEN_WIDTH = 767;
-    var spPageRoot = document.querySelector(".sp-page-root");
-    $scope.mobileDevice = c.data.isMobile || (spPageRoot.clientWidth <= c.MOBILE_DEVICE_SCREEN_WIDTH);
+	c.MOBILE_DEVICE_SCREEN_WIDTH = 767;
+	var spPageRoot = document.querySelector(".sp-page-root");
+	$scope.mobileDevice = c.data.isMobile || (spPageRoot.clientWidth <= c.MOBILE_DEVICE_SCREEN_WIDTH);
 
-    function resizeObserver() {
-      var spPageRoot = document.querySelector(".sp-page-root");
-      if(window.ResizeObserver) {
-        var resizeObserver = new ResizeObserver((entries) => {
-          if (entries) {
-            $scope.mobileDevice = c.data.isMobile || (spPageRoot.clientWidth <= c.MOBILE_DEVICE_SCREEN_WIDTH);
-          }
-        });
+	function resizeObserver() {
+		var spPageRoot = document.querySelector(".sp-page-root");
+		if (window.ResizeObserver) {
+			var resizeObserver = new ResizeObserver((entries) => {
+				if (entries) {
+					$scope.mobileDevice = c.data.isMobile || (spPageRoot.clientWidth <= c.MOBILE_DEVICE_SCREEN_WIDTH);
+				}
+			});
 
-        if (spPageRoot) {
-          resizeObserver.observe(spPageRoot);
-        }
-      }
-    }
+			if (spPageRoot) {
+				resizeObserver.observe(spPageRoot);
+			}
+		}
+	}
 
-    resizeObserver();
+	resizeObserver();
 
 
-    if (cabrillo.isNative())
-        $scope.isViewNative = true;
+	if (cabrillo.isNative())
+		$scope.isViewNative = true;
 
-    $scope.isCategorySelectedOnMobileMegaMenu = false;
-    $rootScope.$on('categorySelectedOnMobileMegaMenu', function(event, isCategorySelected) {
-        $scope.isCategorySelectedOnMobileMegaMenu = isCategorySelected;
-    });
-    $scope.newPageId = c.data.initialPageId;
-    $scope.showSearchbarOnMobile = false;
-    
-    c.getContainer = function(){
-		  return $("." + "instance" + "-" + c.data.instanceId);
-	  };
+	$scope.isCategorySelectedOnMobileMegaMenu = false;
+	$rootScope.$on('categorySelectedOnMobileMegaMenu', function (event, isCategorySelected) {
+		$scope.isCategorySelectedOnMobileMegaMenu = isCategorySelected;
+	});
+	$scope.newPageId = c.data.initialPageId;
+	$scope.showSearchbarOnMobile = false;
 
-    $scope.showSearchBarMobile = function(event) {
+	c.getContainer = function () {
+		return $("." + "instance" + "-" + c.data.instanceId);
+	};
+
+	$scope.showSearchBarMobile = function (event) {
 		if (event.keyCode === 13 || event.keyCode === 32) {
 			event.preventDefault();
 		}
-      $scope.showSearchbarOnMobile = true;
-      $timeout(function() {
-        $scope.focusOnSearchBar();
-      });
-    };
+		$scope.showSearchbarOnMobile = true;
+		$timeout(function () {
+			$scope.focusOnSearchBar();
+		});
+	};
 
-   	$scope.hideSearchBarMobile = function() {
-        $scope.showSearchbarOnMobile = false;
-		$timeout(function(){
-			 $scope.$apply();
-		},10);    
-    };
+	$scope.hideSearchBarMobile = function () {
+		$scope.showSearchbarOnMobile = false;
+		$timeout(function () {
+			$scope.$apply();
+		}, 10);
+	};
 
 
-    document.addEventListener('focus', (event) => {
-	var  currentlyFocusedElement = event.target;
-	if(flag ==1)
-	{
-		if(currentlyFocusedElement.name!= 'search' &&  currentlyFocusedElement!=c.getContainer().find('input[name="q"]')[0] && currentlyFocusedElement!=c.getContainer().find('sn-search-combobox')[0]){
-			var typeaheadSearchDiv = c.getContainer().find('#searchBox');
-			typeaheadSearchDiv.removeClass("show-search").addClass('hide-search');
-			$timeout(function() {
-				// visibility should be hidden after the collapsing animation, hence the timeout
-				typeaheadSearchDiv.addClass('visibility-collapse');
-				c.getContainer().find('#searchbox-icon').removeClass('hidden');
-			}, 500);
-			if($scope.mobileDevice)
-				$scope.hideSearchBarMobile();
-			flag =0;
+	document.addEventListener('focus', (event) => {
+		var currentlyFocusedElement = event.target;
+		if (flag == 1) {
+			if (currentlyFocusedElement.name != 'search' && currentlyFocusedElement != c.getContainer().find('input[name="q"]')[0] && currentlyFocusedElement != c.getContainer().find('sn-search-combobox')[0]) {
+				var typeaheadSearchDiv = c.getContainer().find('#searchBox');
+				typeaheadSearchDiv.removeClass("show-search").addClass('hide-search');
+				$timeout(function () {
+					// visibility should be hidden after the collapsing animation, hence the timeout
+					typeaheadSearchDiv.addClass('visibility-collapse');
+					c.getContainer().find('#searchbox-icon').removeClass('hidden');
+				}, 500);
+				if ($scope.mobileDevice)
+					$scope.hideSearchBarMobile();
+				flag = 0;
+			}
 		}
-	}
-    }, true);
+	}, true);
 
-    $scope.focusOnSearchBar = function() {
-		flag=1;
-      // focus on the search widget input box, and add a blur event
-      if (c.data.aisEnabled) {
-        var searchBox = c.getContainer().find('sn-search-combobox')[0];
-		if ($scope.mobileDevice)
-        searchBox.addEventListener('blur', $scope.onSearchBoxBlur);
-        $timeout(function() {
-          searchBox.shadowRoot.childNodes[0].shadowRoot.childNodes[0].querySelector('input').focus();
-        }, 500);
-      } else {
-        var searchBox = c.getContainer().find('input[name="q"]')[0];
-		searchBox.addEventListener('keydown',(event)=>$scope.onSearchBoxTab(event));
-        searchBox.focus();
-      }
-    };
-	
-		$scope.onSearchBoxTab = function(event){
-			$timeout(function() {
-				if(event.keyCode==9){
-            var searchIcon =  c.getContainer().find('#searchbox-icon');
-						searchIcon.focus();
-				}        
-        }, 525);
-		
-		};
+	$scope.focusOnSearchBar = function () {
+		flag = 1;
+		// focus on the search widget input box, and add a blur event
+		if (c.data.aisEnabled) {
+			var searchBox = c.getContainer().find('sn-search-combobox')[0];
+			if ($scope.mobileDevice)
+				searchBox.addEventListener('blur', $scope.onSearchBoxBlur);
+			$timeout(function () {
+				searchBox.shadowRoot.childNodes[0].shadowRoot.childNodes[0].querySelector('input').focus();
+			}, 500);
+		} else {
+			var searchBox = c.getContainer().find('input[name="q"]')[0];
+			searchBox.addEventListener('keydown', (event) => $scope.onSearchBoxTab(event));
+			searchBox.focus();
+		}
+	};
 
-    $scope.showAndExpandSearch = function(event) {
-      // show typeahead search widget and hide search icon on Desktop view
-			spAriaUtil.sendLiveMessage(i18n.getMessage("button expanded"));
-      c.getContainer().find('#searchBox').removeClass('hide-search').addClass('show-search').removeClass('visibility-collapse');
-	    c.getContainer().find('#searchbox-icon').addClass('hidden');
-      $scope.focusOnSearchBar();
-    };
+	$scope.onSearchBoxTab = function (event) {
+		$timeout(function () {
+			if (event.keyCode == 9) {
+				var searchIcon = c.getContainer().find('#searchbox-icon');
+				searchIcon.focus();
+			}
+		}, 525);
 
-    $scope.onSearchBoxBlur = function(event) {
-     	$scope.hideSearchBarMobile();
-    };
+	};
 
-    $scope.getUrlParameters = function(parameter, decode, staticURL) {
-      var url = staticURL ? staticURL : $location.url();
-      var currLocation = (url.length) ? url : window.location.search;
-      if (!currLocation || !currLocation.split("?") || currLocation.split("?").length < 2)
-        return '';
-      var paramArr = currLocation.split("?")[1].split("&");
-      var numOfParams = paramArr.length;
-      for (var i = 0; i < numOfParams; i++) {
-        param = paramArr[i].split("=");
-        if (param[0] === parameter)
-          return (decode) ? decodeURIComponent(param[1]) : param[1];
-      }
-      return '';
-    };
+	$scope.showAndExpandSearch = function (event) {
+		// show typeahead search widget and hide search icon on Desktop view
+		spAriaUtil.sendLiveMessage(i18n.getMessage("button expanded"));
+		c.getContainer().find('#searchBox').removeClass('hide-search').addClass('show-search').removeClass('visibility-collapse');
+		c.getContainer().find('#searchbox-icon').addClass('hidden');
+		$scope.focusOnSearchBar();
+	};
 
-    $scope.$on("$sp.service_catalog.cart.count", function($evt, count) {
-        $scope.cartItemCount = count;
-    });
+	$scope.onSearchBoxBlur = function (event) {
+		$scope.hideSearchBarMobile();
+	};
 
-    $scope.$on("$locationChangeSuccess", function(event, data) {
-      $scope.newPageId = $scope.getUrlParameters("id", true, data);
-        if (c.data.isMobile) {
-            if ($('div#popup_todos_mobile').is(":visible"))
-                $('li > a#todos_popup').click();
-            else if ($('div#popup_cases_mobile').is(":visible"))
-                $('li > a#cases_popup').click();
-        } else {
-            $('li.open > a#cases_popup').click();
-            $('li.open > a#todos_popup').click();
-        }
+	$scope.getUrlParameters = function (parameter, decode, staticURL) {
+		var url = staticURL ? staticURL : $location.url();
+		var currLocation = (url.length) ? url : window.location.search;
+		if (!currLocation || !currLocation.split("?") || currLocation.split("?").length < 2)
+			return '';
+		var paramArr = currLocation.split("?")[1].split("&");
+		var numOfParams = paramArr.length;
+		for (var i = 0; i < numOfParams; i++) {
+			param = paramArr[i].split("=");
+			if (param[0] === parameter)
+				return (decode) ? decodeURIComponent(param[1]) : param[1];
+		}
+		return '';
+	};
 
-      // hide modal-div on location change
-      if($scope.isMobileViewOnDesktopExpanded){
-        $scope.isMobileViewOnDesktopExpanded = false;
-        $scope.expanded = false;
-        $scope.showMobileMegaMenu = false;
-        $rootScope.$emit(c.SHOW_MOBILE_MEGA_MENU, false);
-      }
-    });
+	$scope.$on("$sp.service_catalog.cart.count", function ($evt, count) {
+		$scope.cartItemCount = count;
+	});
 
-    $scope.openLogin = function() {
-        $scope.modalInstance = $uibModal.open({
-            templateUrl: 'svpdpspPolarisModalLogin',
-            scope: $scope
-        });
+	$scope.$on("$locationChangeSuccess", function (event, data) {
+		$scope.newPageId = $scope.getUrlParameters("id", true, data);
+		if (c.data.isMobile) {
+			if ($('div#popup_todos_mobile').is(":visible"))
+				$('li > a#todos_popup').click();
+			else if ($('div#popup_cases_mobile').is(":visible"))
+				$('li > a#cases_popup').click();
+		} else {
+			$('li.open > a#cases_popup').click();
+			$('li.open > a#todos_popup').click();
+		}
 
-        var pageRoot = angular.element('.sp-page-root');
-        $scope.modalInstance.rendered.then(function() {
-            var $uibModalStack = $injector.get('$uibModalStack');
-            var modalObj = $uibModalStack.getTop();
-            var modal = modalObj.value.modalDomEl;
+		// hide modal-div on location change
+		if ($scope.isMobileViewOnDesktopExpanded) {
+			$scope.isMobileViewOnDesktopExpanded = false;
+			$scope.expanded = false;
+			$scope.showMobileMegaMenu = false;
+			$rootScope.$emit(c.SHOW_MOBILE_MEGA_MENU, false);
+		}
+	});
 
-            modal.attr('aria-label', modal.find('.panel-title').html());
-            modal.attr('aria-modal', 'true');
-            pageRoot.attr('aria-hidden', 'true');
-        });
+	// $scope.openLogin = function () {
+	// 	$scope.modalInstance = $uibModal.open({
+	// 		templateUrl: 'svpdpspPolarisModalLogin',
+	// 		scope: $scope
+	// 	});
 
-        $scope.modalInstance.closed.then(function() {
-            pageRoot.attr('aria-hidden', 'false');
-        });
-    };
+	// 	var pageRoot = angular.element('.sp-page-root');
+	// 	$scope.modalInstance.rendered.then(function () {
+	// 		var $uibModalStack = $injector.get('$uibModalStack');
+	// 		var modalObj = $uibModalStack.getTop();
+	// 		var modal = modalObj.value.modalDomEl;
 
-    $rootScope.$on("update.searchpage", function(e, searchPage) {
-        $scope.searchPage = searchPage;
-    });
+	// 		modal.attr('aria-label', modal.find('.panel-title').html());
+	// 		modal.attr('aria-modal', 'true');
+	// 		pageRoot.attr('aria-hidden', 'true');
+	// 	});
 
-    $rootScope.$on('sp.avatar_changed', function() {
-        $scope.userID = '';
-        $timeout(function() {
-            $scope.userID = $scope.user.sys_id;
-        });
-    });
+	// 	$scope.modalInstance.closed.then(function () {
+	// 		pageRoot.attr('aria-hidden', 'false');
+	// 	});
+	// };
 
-    $rootScope.$on(c.SHOW_MOBILE_MENU_ON_DESKTOP, function(event, showMobileMenuOnDesktop) {
-        if (!showMobileMenuOnDesktop && $scope.showMobileMenuOnDesktop) {
-            $scope.isMobileViewOnDesktopExpanded = false;
-        }
-        $scope.showMobileMenuOnDesktop = showMobileMenuOnDesktop;
-    });
+	$rootScope.$on("update.searchpage", function (e, searchPage) {
+		$scope.searchPage = searchPage;
+	});
 
-    $rootScope.$on(c.SHOW_MOBILE_MEGA_MENU, function(event, showMobileMegaMenu) {
-        $scope.showMobileMegaMenu = showMobileMegaMenu;
-    });
+	$rootScope.$on('sp.avatar_changed', function () {
+		$scope.userID = '';
+		$timeout(function () {
+			$scope.userID = $scope.user.sys_id;
+		});
+	});
 
-    $scope.toggleMobileMenuVisibility = function(event) {
-        if (event) {
-            event.stopPropagation();
-        }
-        $scope.isMobileViewOnDesktopExpanded = !$scope.isMobileViewOnDesktopExpanded;
-        $scope.expanded = false;
-        $scope.showMobileMegaMenu = false;
-        $rootScope.$emit(c.SHOW_MOBILE_MEGA_MENU, false);
-    };
+	$rootScope.$on(c.SHOW_MOBILE_MENU_ON_DESKTOP, function (event, showMobileMenuOnDesktop) {
+		if (!showMobileMenuOnDesktop && $scope.showMobileMenuOnDesktop) {
+			$scope.isMobileViewOnDesktopExpanded = false;
+		}
+		$scope.showMobileMenuOnDesktop = showMobileMenuOnDesktop;
+	});
 
-    $rootScope.$on(c.TOGGLE_MOBILE_MENU_VISIBILITY, function() {
-        $scope.toggleMobileMenuVisibility();
-    });
+	$rootScope.$on(c.SHOW_MOBILE_MEGA_MENU, function (event, showMobileMegaMenu) {
+		$scope.showMobileMegaMenu = showMobileMegaMenu;
+	});
 
-    $scope.isHomepage = function() {
-        if (!$scope.page.id)
-            return true;
+	$scope.toggleMobileMenuVisibility = function (event) {
+		if (event) {
+			event.stopPropagation();
+		}
+		$scope.isMobileViewOnDesktopExpanded = !$scope.isMobileViewOnDesktopExpanded;
+		$scope.expanded = false;
+		$scope.showMobileMegaMenu = false;
+		$rootScope.$emit(c.SHOW_MOBILE_MEGA_MENU, false);
+	};
 
-        if ($scope.page.id == $scope.portal.homepage_dv)
-            return true;
+	$rootScope.$on(c.TOGGLE_MOBILE_MENU_VISIBILITY, function () {
+		$scope.toggleMobileMenuVisibility();
+	});
 
-        return false;
-    };
+	$scope.isHomepage = function () {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
 
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -1277,151 +1276,163 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
         <option_schema/>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {
-    data.isMobile = gs.isMobile();
-    data.instanceId = $sp.getDisplayValue("sys_id");
+        <script><![CDATA[(function () {
+	data.isMobile = gs.isMobile();
+	data.instanceId = $sp.getDisplayValue("sys_id");
 
-    data.login_page = $sp.getValue('login_page');
+	data.login_page = $sp.getValue('login_page');
 
-    data.langSelector = GlidePluginManager.isActive('com.glide.i18n') ? $sp.getWidget('sp-lang-selector') : "";
-    
+	data.langSelector = GlidePluginManager.isActive('com.glide.i18n') ? $sp.getWidget('sp-lang-selector') : "";
+
 	data.showSubHeader = true;
-  var portalRecord = $sp.getPortalRecord();
-  var urlSuffix=portalRecord.getValue("url_suffix");
+	var portalRecord = $sp.getPortalRecord();
+	var urlSuffix = portalRecord.getValue("url_suffix");
 	// Load the Secondary Menu Widget
 
-    var qsConfig = $sp.getValue("quick_start_config");
-    var qsConfigJson = qsConfig ? JSON.parse(qsConfig)[0] : {};
-	if (qsConfigJson.account_registration_item_sys_id && qsConfigJson.account_registration_item_sys_id != "")
-		data.account_registration_item_sys_id = qsConfigJson.account_registration_item_sys_id;
-    if(qsConfigJson.headerSearch && qsConfigJson.headerSearch.display_search === true){
-      data.excludeSeachForPages = [];
-      if (qsConfigJson.headerSearch.exclude_search_for_pages)
-            data.excludeSeachForPages = qsConfigJson.headerSearch.exclude_search_for_pages.split(",");
-      data.aisEnabled = $sp.isAISearchEnabled();
-      if (data.aisEnabled) {
-          var typeAheadOptions = {
-              search_application: portalRecord.getValue('search_application'),
-              disable_all_suggestions: false
-          };
-          if (qsConfigJson.headerSearch.search_placeholder_text)
-              typeAheadOptions.placeholder = gs.getMessage(qsConfigJson.headerSearch.search_placeholder_text);
-      }
-      else {
-          var typeAheadOptions = {
-              size: 'md',
-              color: 'default'
-          };
-          if (qsConfigJson.headerSearch.search_placeholder_text)
-              typeAheadOptions.title = gs.getMessage(qsConfigJson.headerSearch.search_placeholder_text);
-      }
-      data.typeAheadSearch = $sp.getWidget('typeahead-search', typeAheadOptions);
-	  }
-	  if(qsConfigJson.widget){
-		data.embeddedWidget = $sp.getWidget(qsConfigJson.widget.widget_id, qsConfigJson.widget.instance_options || {});
-	  }
-	  data.showTypeAheadSearch = (data.typeAheadSearch && data.typeAheadSearch.sys_id ? true : false) && qsConfigJson.headerSearch && qsConfigJson.headerSearch.display_search === true;
-	
-
-    var showSubHeaderString = qsConfigJson.showSubHeader;
-    if (!gs.nil(showSubHeaderString))
-        switch (showSubHeaderString.toUpperCase()) {
-            case "ON_LOG_IN":
-                data.showSubHeader = gs.isLoggedIn();
-                break;
-            case "NEVER":
-                data.showSubHeader = false;
-                break;
-            case "ALWAYS":
-            default:
-                data.showSubHeader = true;
-                break;
-        }
-
-    //Initialize menu objects
-    data.sub = {};
-    data.top = {};
-
-    var menu = $sp.getValue("sp_rectangle_menu");
-
-    if (!gs.nil(menu)) {
-
-        data.sub.menu = $sp.getWidgetFromInstance(menu);
-
-        //Copy sub menu to top menu, we want cart up top and menu items in the sub nav
-        data.top.menu = JSON.parse(JSON.stringify(data.sub.menu));
-
-        //Fetching My Items menu item sys_id
-        var configOptions = JSON.parse((data.top.menu && data.top.menu.options && data.top.menu.options.widget_parameters) || '{}');
-        data.moreItemsSysId = (configOptions.enable_more_items && configOptions.enable_more_items.sysId) || '';
-
-        var subMenu = data.sub.menu;
-        var moreItems;
-        if (subMenu && subMenu.data) {
-            subMenu.data.replace = true;
-            // Hide login if menu already has link to login
-            data.hasLogin = false;
-            var subMenuDataItems = (subMenu.data.menu && subMenu.data.menu.items) || [];
-            for (var i in subMenuDataItems) {
-
-                var item = subMenuDataItems[i];
-                if (item.sys_id === data.moreItemsSysId)
-                    moreItems = item;
-                if (item.type === 'page' && item.sp_page === data.login_page)
-                    data.hasLogin = true;
-            }
-        }
-
-        if (moreItems && moreItems.items)
-            data.moreItems = moreItems.items;
-        if (moreItems && data.moreItems && moreItems.label) {
-            // Removing items with no label
-            data.moreItems = data.moreItems.filter(function(moreItem) {
-                return moreItem.label;
-            });
-
-            // Truncating label of items exceeding 60 character limit
-            data.moreItems.forEach(function(moreItem) {
-                moreItem.shortLabel = (moreItem.label.length > 60) ? (moreItem.label.substring(0, 60) + '...') : moreItem.label;
-            });
-        }
-    
-    data.showMoreItems = (moreItems && moreItems.label && data.moreItems && configOptions.enable_more_items) ? (data.moreItems.length > 0 && configOptions.enable_more_items.value) : false;
-    if (data.showMoreItems)
-        data.moreItemsTitle = data.moreItems.length === 1 ? data.moreItems[0].shortLabel : moreItems.label;
-		
-		
-	//Clean up items that don't belong
-    subMenu.data.cartWidget = {};
-    subMenu.options.enable_cart = false;
-    subMenu.options.enable_wishlist = false;
-    subMenu.data.showTours = false;
-    subMenu.data.menuType = 'SUB';
-
-    // Make this true to show Tours menu in main header
-    data.top.menu.data.showTours = true;
-    data.top.menu.data.hasLogin = data.hasLogin;
-    data.top.menu.data.menuType = 'TOP';
-
-    if(data.top.menu.sys_id === '756957db43f5ed1011a4ebdffab8f243'){
-			if (data.top.menu && data.top.menu.data && data.top.menu.data.menu && data.top.menu.data.menu.items){
-				data.sub.menu.data.menu.items = data.sub.menu.data.menu.items.filter(function(item) {
-						return item.type != 'scripted';
-				});
-				data.top.menu.data.menu.items = data.top.menu.data.menu.items.filter(function(item) {
-						return item.type == 'scripted';
-				});
-			}
-		}	
+	var qsConfig = $sp.getValue("quick_start_config");
+	var qsConfigJson = qsConfig ? JSON.parse(qsConfig)[0] : {};
+	if (qsConfigJson.headerSearch && qsConfigJson.headerSearch.display_search === true) {
+		data.excludeSeachForPages = [];
+		if (qsConfigJson.headerSearch.exclude_search_for_pages)
+			data.excludeSeachForPages = qsConfigJson.headerSearch.exclude_search_for_pages.split(",");
+		data.aisEnabled = $sp.isAISearchEnabled();
+		if (data.aisEnabled) {
+			var typeAheadOptions = {
+				search_application: portalRecord.getValue('search_application'),
+				disable_all_suggestions: false
+			};
+			if (qsConfigJson.headerSearch.search_placeholder_text)
+				typeAheadOptions.placeholder = gs.getMessage(qsConfigJson.headerSearch.search_placeholder_text);
+		}
 		else {
-			 if (data.top.menu && data.top.menu.data && data.top.menu.data.menu && data.top.menu.data.menu.items)
-        data.top.menu.data.menu.items = [];
+			var typeAheadOptions = {
+				size: 'md',
+				color: 'default'
+			};
+			if (qsConfigJson.headerSearch.search_placeholder_text)
+				typeAheadOptions.title = gs.getMessage(qsConfigJson.headerSearch.search_placeholder_text);
+		}
+		data.typeAheadSearch = $sp.getWidget('typeahead-search', typeAheadOptions);
+	}
+	if (qsConfigJson.widget) {
+		data.embeddedWidget = $sp.getWidget(qsConfigJson.widget.widget_id, qsConfigJson.widget.instance_options || {});
+	}
+	data.showTypeAheadSearch = (data.typeAheadSearch && data.typeAheadSearch.sys_id ? true : false) && qsConfigJson.headerSearch && qsConfigJson.headerSearch.display_search === true;
+
+	// for self registration fields
+	var self_registration_field = portalRecord ? portalRecord.getValue("user_registration_config") : "";
+	if (self_registration_field) {
+		var registration_config = new GlideRecord("sys_user_registration_config");
+		registration_config.addActiveQuery();
+		registration_config.query('sys_id', self_registration_field);
+		if (registration_config.next()) {
+			var self_registration_record_producer = registration_config.getValue("record_producer");
+			var self_registration_label = registration_config.getDisplayValue("registration_label") || gs.getMessage("Sign Up");
+			data.self_registration_record_producer = self_registration_record_producer;
+			data.self_registration_label = self_registration_label;
 		}
 	}
-    // Analytics
-    data.analyticsSupportEnabled = new GlidePluginManager().isActive('com.sn_content_analytics') && new GlidePluginManager().isActive('com.sn_content_delivery') && !sn_cd.cd_ContentDelivery.isContentPreview($sp);
-    data.supportProfilePortal = new sn_sppolaris_theme.UserProfileUtil().getProfileURL(urlSuffix);
-    data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+
+
+	var showSubHeaderString = qsConfigJson.showSubHeader;
+	if (!gs.nil(showSubHeaderString))
+		switch (showSubHeaderString.toUpperCase()) {
+			case "ON_LOG_IN":
+				data.showSubHeader = gs.isLoggedIn();
+				break;
+			case "NEVER":
+				data.showSubHeader = false;
+				break;
+			case "ALWAYS":
+			default:
+				data.showSubHeader = true;
+				break;
+		}
+
+	//Initialize menu objects
+	data.sub = {};
+	data.top = {};
+
+	var menu = $sp.getValue("sp_rectangle_menu");
+
+	if (!gs.nil(menu)) {
+
+		data.sub.menu = $sp.getWidgetFromInstance(menu);
+
+		//Copy sub menu to top menu, we want cart up top and menu items in the sub nav
+		data.top.menu = JSON.parse(JSON.stringify(data.sub.menu));
+
+		//Fetching My Items menu item sys_id
+		var configOptions = JSON.parse((data.top.menu && data.top.menu.options && data.top.menu.options.widget_parameters) || '{}');
+		data.moreItemsSysId = (configOptions.enable_more_items && configOptions.enable_more_items.sysId) || '';
+
+		var subMenu = data.sub.menu;
+		var moreItems;
+		if (subMenu && subMenu.data) {
+			subMenu.data.replace = true;
+			// Hide login if menu already has link to login
+			data.hasLogin = false;
+			var subMenuDataItems = (subMenu.data.menu && subMenu.data.menu.items) || [];
+			for (var i in subMenuDataItems) {
+
+				var item = subMenuDataItems[i];
+				if (item.sys_id === data.moreItemsSysId)
+					moreItems = item;
+				if (item.type === 'page' && item.sp_page === data.login_page)
+					data.hasLogin = true;
+			}
+		}
+
+		if (moreItems && moreItems.items)
+			data.moreItems = moreItems.items;
+		if (moreItems && data.moreItems && moreItems.label) {
+			// Removing items with no label
+			data.moreItems = data.moreItems.filter(function (moreItem) {
+				return moreItem.label;
+			});
+
+			// Truncating label of items exceeding 60 character limit
+			data.moreItems.forEach(function (moreItem) {
+				moreItem.shortLabel = (moreItem.label.length > 60) ? (moreItem.label.substring(0, 60) + '...') : moreItem.label;
+			});
+		}
+
+		data.showMoreItems = (moreItems && moreItems.label && data.moreItems && configOptions.enable_more_items) ? (data.moreItems.length > 0 && configOptions.enable_more_items.value) : false;
+		if (data.showMoreItems)
+			data.moreItemsTitle = data.moreItems.length === 1 ? data.moreItems[0].shortLabel : moreItems.label;
+
+
+		//Clean up items that don't belong
+		subMenu.data.cartWidget = {};
+		subMenu.options.enable_cart = false;
+		subMenu.options.enable_wishlist = false;
+		subMenu.data.showTours = false;
+		subMenu.data.menuType = 'SUB';
+
+		// Make this true to show Tours menu in main header
+		data.top.menu.data.showTours = true;
+		data.top.menu.data.hasLogin = data.hasLogin;
+		data.top.menu.data.menuType = 'TOP';
+
+		if (data.top.menu.sys_id === '756957db43f5ed1011a4ebdffab8f243') {
+			if (data.top.menu && data.top.menu.data && data.top.menu.data.menu && data.top.menu.data.menu.items) {
+				data.sub.menu.data.menu.items = data.sub.menu.data.menu.items.filter(function (item) {
+					return item.type != 'scripted';
+				});
+				data.top.menu.data.menu.items = data.top.menu.data.menu.items.filter(function (item) {
+					return item.type == 'scripted';
+				});
+			}
+		}
+		else {
+			if (data.top.menu && data.top.menu.data && data.top.menu.data.menu && data.top.menu.data.menu.items)
+				data.top.menu.data.menu.items = [];
+		}
+	}
+	// Analytics
+	data.analyticsSupportEnabled = new GlidePluginManager().isActive('com.sn_content_analytics') && new GlidePluginManager().isActive('com.sn_content_delivery') && !sn_cd.cd_ContentDelivery.isContentPreview($sp);
+	data.supportProfilePortal = new sn_sppolaris_theme.UserProfileUtil().getProfileURL(urlSuffix);
+	data.loginWidget = $sp.getWidgetFromInstance('login-modal');
 	data.initialPageId = $sp.getParameter('id');
 	if (!data.initialPageId)
 		data.initialPageId = '';
@@ -1433,14 +1444,14 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-08 17:49:56</sys_created_on>
         <sys_id>8fc075f597b30754d3efb73de053af92</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>SVPDP Portal Polaris Header</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_header_footer_8fc075f597b30754d3efb73de053af92</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-15 19:06:12</sys_updated_on>
+        <sys_updated_on>2026-10-22 22:01:55</sys_updated_on>
         <template><![CDATA[<!-- Nav bar menu items starts-->
 <nav class="navbar-inverse instance-{{c.data.instanceId}}" aria-label="Primary" role="navigation">
   <!-- Piece above searchbar -->
@@ -1589,8 +1600,12 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
             <li>
               <div sp-navbar-toggle="" class="navbar-right" id="sp-nav-bar" >
                 <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav" role="presentation">
-                  <li class="createAccount"><a href="?id=sn_user_registration&sys_id={{data.account_registration_item_sys_id}}">${Register}</a></li>
-                  <li class="login"><a href ng-click="openLogin()" role="button">${Login}</a></li>
+                  <li class="createAccount" ng-if="::data.self_registration_record_producer"><a ng-href="?id=sn_user_registration&sys_id={{::data.self_registration_record_producer}}">${Register}</a></li>
+                  <!--<li class="login"><a href ng-click="openLogin()" role="button">${Login}</a></li>-->
+                  <li class="login"><a href="?id={{::portal.login_page_dv}}" target="_self">${Login}</a></li>
+                </ul>
+                <ul ng-if="::(!user.logged_in && page.id == portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav" role="presentation">
+                  <li class="home"><a href="?id=" target="_self">${Home}</a></li>
                 </ul>
                 <ul ng-if="::user.logged_in" class="nav navbar-nav" role="presentation">
                   <!-- chat, avatar, and logout -->
@@ -1620,7 +1635,7 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
   <div class="navbar-collapse sub-navbar clearfix collapse collapsed hidden-xs"
        ng-class="{ 'in': expanded, 'collapsed': !expanded, 'sub-navbar--mobile-view': showMobileMenuOnDesktop }"
        ng-if="data.showSubHeader && !showMobileMenuOnDesktop && !mobileDevice">
-    <div>
+    <div ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)">
       <sp-widget widget="data.sub.menu"></sp-widget>
     </div>
   </div>

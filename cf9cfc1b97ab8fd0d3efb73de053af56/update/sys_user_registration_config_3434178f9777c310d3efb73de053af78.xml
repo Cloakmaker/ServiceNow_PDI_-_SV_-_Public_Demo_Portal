@@ -10,7 +10,7 @@
 <p>Please watch your email for instructions.</p>
 <p> </p>
 <details style="border: 1px solid black;">
-<summary style="display: list-item; width: 100%; color: white; background-color: black; padding: 10px 10px;"><strong>CLICK FOR DETAILS (NERD STUFF)</strong></summary>
+<summary style="display: list-item; width: 100%; color: white; background-color: black; padding: 10px 10px;"><strong>CLICK FOR DETAILS (FOR ENTHUSIASTS)</strong></summary>
 <div style="padding: 10px;">
 <p>The details herein are dependent on the configurations represented on the <em><strong>User Registration Configuration</strong></em> record.</p>
 <p><strong>BOLD</strong> text indicates fields on the configuration record while <em>ITALICIZED</em> text indicates other tables or records.</p>
@@ -53,14 +53,14 @@
         <sys_created_on>2026-10-12 22:17:24</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>3434178f9777c310d3efb73de053af78</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>SV PDP Default Registration</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sys_user_registration_config_3434178f9777c310d3efb73de053af78</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-15 02:19:05</sys_updated_on>
+        <sys_updated_on>2026-10-22 23:01:34</sys_updated_on>
         <terms_and_condition_url/>
         <transform_map display_value="u_reg_xmap_894157">d764df8f9777c310d3efb73de053af76</transform_map>
         <user_onboarding_flow display_value="SV PDP External User Onboarding">1feaafcf973bc310d3efb73de053af12</user_onboarding_flow>
