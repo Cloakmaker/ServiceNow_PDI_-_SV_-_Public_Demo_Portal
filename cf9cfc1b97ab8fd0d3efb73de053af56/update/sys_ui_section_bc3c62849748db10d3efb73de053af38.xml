@@ -4,13 +4,13 @@
             <element>knowledge_gen_ai_message.xml</element>
             <position>0</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>339c26089748db10d3efb73de053afc8</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>15dc695297409f50d3efb73de053afbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Knowledge Gen AI Message">43fdbfbbc3b9b110d3ff8cab3c40dd97</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>knowledge_now_assist_modal.xml</element>
             <position>1</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>339c26089748db10d3efb73de053afc9</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>5ddc695297409f50d3efb73de053afbd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Knowledge Now Assist Modal">435fbe6283ec0e5039fd5defeeaad3fe</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>.begin_split</element>
             <position>2</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>339c26089748db10d3efb73de053afca</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>5ddc695297409f50d3efb73de053afbe</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>number</element>
             <position>3</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>bf9c26089748db10d3efb73de053afca</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d9dc695297409f50d3efb73de053afbf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>kb_knowledge_base</element>
             <position>4</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3f9c26089748db10d3efb73de053afcb</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>59dc695297409f50d3efb73de053afc0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>kb_category</element>
             <position>5</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>bb9c26089748db10d3efb73de053afcc</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d5dc695297409f50d3efb73de053afc1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -88,13 +88,13 @@
             <element>ownership_group</element>
             <position>6</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3b9c26089748db10d3efb73de053afcd</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>55dc695297409f50d3efb73de053afc2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -102,13 +102,13 @@
             <element>published</element>
             <position>7</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>b79c26089748db10d3efb73de053afce</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d1dc695297409f50d3efb73de053afc3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -116,13 +116,13 @@
             <element>scheduled_publish_date</element>
             <position>8</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>379c26089748db10d3efb73de053afcf</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>51dc695297409f50d3efb73de053afc4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -130,13 +130,13 @@
             <element>valid_to</element>
             <position>9</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>b39c26089748db10d3efb73de053afd0</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>dddc695297409f50d3efb73de053afc4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -144,13 +144,13 @@
             <element>.split</element>
             <position>10</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>339c26089748db10d3efb73de053afd1</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>5ddc695297409f50d3efb73de053afc5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -158,13 +158,13 @@
             <element>version</element>
             <position>11</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>bf9c26089748db10d3efb73de053afd1</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d9dc695297409f50d3efb73de053afc6</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -172,13 +172,13 @@
             <element>article_type</element>
             <position>12</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3f9c26089748db10d3efb73de053afd2</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>59dc695297409f50d3efb73de053afc7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -186,13 +186,13 @@
             <element>workflow_state</element>
             <position>13</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>bb9c26089748db10d3efb73de053afd3</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d5dc695297409f50d3efb73de053afc8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -200,13 +200,13 @@
             <element>source</element>
             <position>14</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3b9c26089748db10d3efb73de053afd4</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>55dc695297409f50d3efb73de053afc9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -214,13 +214,13 @@
             <element>latest_aqi</element>
             <position>15</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>b79c26089748db10d3efb73de053afd5</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d1dc695297409f50d3efb73de053afca</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -228,13 +228,13 @@
             <element>direct</element>
             <position>16</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>379c26089748db10d3efb73de053afd6</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>51dc695297409f50d3efb73de053afcb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -242,13 +242,13 @@
             <element>display_attachments</element>
             <position>17</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>b39c26089748db10d3efb73de053afd7</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>dddc695297409f50d3efb73de053afcb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -256,13 +256,13 @@
             <element>.end_split</element>
             <position>18</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>339c26089748db10d3efb73de053afd8</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>5ddc695297409f50d3efb73de053afcc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -270,13 +270,13 @@
             <element>short_description</element>
             <position>19</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>bf9c26089748db10d3efb73de053afd8</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d9dc695297409f50d3efb73de053afcd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -284,41 +284,41 @@
             <element>cxs_table_search.xml</element>
             <position>20</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3f9c26089748db10d3efb73de053afd9</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>59dc695297409f50d3efb73de053afce</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Contextual Search Results">11eb1622eb1121003623666cd206fe56</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>x_885217_sv_publ_0_u_kb_overview</element>
+            <element>x_885217_sv_publ_0_u_kb_requirements</element>
             <position>21</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3f9c26089748db10d3efb73de053afda</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>59dc695297409f50d3efb73de053afcf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>x_885217_sv_publ_0_u_kb_requirements</element>
+            <element>x_885217_sv_publ_0_u_kb_overview</element>
             <position>22</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>bb9c26089748db10d3efb73de053afdb</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d5dc695297409f50d3efb73de053afd0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -326,13 +326,13 @@
             <element>x_885217_sv_publ_0_u_kb_technical</element>
             <position>23</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>3b9c26089748db10d3efb73de053afdc</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>55dc695297409f50d3efb73de053afd1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -340,13 +340,13 @@
             <element>text</element>
             <position>24</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>b79c26089748db10d3efb73de053afdd</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>d1dc695297409f50d3efb73de053afd2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -354,13 +354,13 @@
             <element>wiki</element>
             <position>25</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>379c26089748db10d3efb73de053afde</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>51dc695297409f50d3efb73de053afd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -368,13 +368,13 @@
             <element>knowledge_form_embedded_queries</element>
             <position>26</position>
             <sys_created_by>sable.vimes</sys_created_by>
-            <sys_created_on>2026-10-15 21:57:38</sys_created_on>
-            <sys_id>b39c26089748db10d3efb73de053afdf</sys_id>
+            <sys_created_on>2026-10-22 17:05:16</sys_created_on>
+            <sys_id>dddc695297409f50d3efb73de053afd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Knowledge Form Embedded Queries">fcd2bd32878dc65025f299b73cbb35b4</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="u_kb_template_technical" sys_domain="global" view="Default view">bc3c62849748db10d3efb73de053af38</sys_ui_section>
             <sys_updated_by>sable.vimes</sys_updated_by>
-            <sys_updated_on>2026-10-15 21:57:38</sys_updated_on>
+            <sys_updated_on>2026-10-22 17:05:16</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>
