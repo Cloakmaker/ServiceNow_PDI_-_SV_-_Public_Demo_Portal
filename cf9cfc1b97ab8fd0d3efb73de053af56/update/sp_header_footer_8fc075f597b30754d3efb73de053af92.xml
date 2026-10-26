@@ -1076,7 +1076,7 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
     font-size: $font-size-xl;&#13;
     vertical-align: sub;&#13;
   }&#13;
-  .guest-avatar {&#13;
+  .guest-avatar, .register {&#13;
     height: 42px;&#13;
     width: 42px;&#13;
     border-radius: 50%;&#13;
@@ -1091,6 +1091,14 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
     font-size: $font-size-xl;&#13;
     vertical-align: -webkit-baseline-middle;&#13;
     margin: 0px !important;&#13;
+  }&#13;
+  .register-icon {&#13;
+    color: $brand-primary;&#13;
+    font-size: $font-size-xl;&#13;
+    vertical-align: -webkit-baseline-middle;&#13;
+    margin: 0px !important;&#13;
+    line-height: 100%;&#13;
+	height: 50%;&#13;
   }&#13;
   .show-more-item{&#13;
   	margin-bottom: $sp-space--lg;&#13;
@@ -1444,14 +1452,14 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-08 17:49:56</sys_created_on>
         <sys_id>8fc075f597b30754d3efb73de053af92</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>SVPDP Portal Polaris Header</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_header_footer_8fc075f597b30754d3efb73de053af92</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-22 22:01:55</sys_updated_on>
+        <sys_updated_on>2026-10-26 14:50:18</sys_updated_on>
         <template><![CDATA[<!-- Nav bar menu items starts-->
 <nav class="navbar-inverse instance-{{c.data.instanceId}}" aria-label="Primary" role="navigation">
   <!-- Piece above searchbar -->
@@ -1635,7 +1643,7 @@ input[name="q"],.search-combobox--header .input-container__input{&#13;
   <div class="navbar-collapse sub-navbar clearfix collapse collapsed hidden-xs"
        ng-class="{ 'in': expanded, 'collapsed': !expanded, 'sub-navbar--mobile-view': showMobileMenuOnDesktop }"
        ng-if="data.showSubHeader && !showMobileMenuOnDesktop && !mobileDevice">
-    <div ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)">
+    <div ng-if="::(page.id != portal.login_page_dv)">
       <sp-widget widget="data.sub.menu"></sp-widget>
     </div>
   </div>
