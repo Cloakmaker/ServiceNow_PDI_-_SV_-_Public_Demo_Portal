@@ -14,14 +14,14 @@
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-09-30 20:27:58</sys_created_on>
         <sys_id>4428c553972f8fd0d3efb73de053af3b</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>SV PDP Theme</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_theme_4428c553972f8fd0d3efb73de053af3b</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-13 22:49:11</sys_updated_on>
+        <sys_updated_on>2026-10-26 13:34:01</sys_updated_on>
         <turn_off_scss_compilation>true</turn_off_scss_compilation>
     </sp_theme>
     <sys_translated_text action="delete_multiple" query="documentkey=4428c553972f8fd0d3efb73de053af3b"/>

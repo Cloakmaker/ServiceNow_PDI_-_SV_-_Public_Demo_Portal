@@ -11,6 +11,10 @@
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var SVPDPUtils = Class.create();
 SVPDPUtils.prototype = {
+	HOME_PAGE: "homepage",
+	KB_HOME_PAGE: "kb_knowledge_page",
+	SC_HOME_PAGE: "sc_catalog_page",
+
 	initialize: function () {
 	},
 
@@ -20,20 +24,45 @@ SVPDPUtils.prototype = {
 
 		if (gr.sp_rectangle_menu.toString() == 'f20072fc97f30f14d3efb73de053afb7') {
 			if (gr.type == 'page') {
-				switch (gr.sp_page.id.toString()) {
-					case 'kb_home':
-						return true;
-					case 'my_requests':
-						return $sp.canSeePage('my_requests') && gs.isLoggedIn();
-					default:
-						return false;
-				}
-			}
-
-			if (gr.type == 'sc') {
-				return GlideSPScriptable.canSeePage("sc_home") && gs.isLoggedIn();
+				return $sp.canSeePage(gr.sp_page.id + '') && gs.isLoggedIn();
+			} else if (gr.type == 'sc' || gr.type == 'kb') {
+				var homepage = this[gr.type.toUpperCase() + "_HOME_PAGE"];
+				var pageID = $sp.getDisplayValue(homepage);
+				return $sp.canSeePage(pageID) && (gr.type == "kb" ? true : gs.isLoggedIn());
+			} else {
+				gs.info("SVPDPUtils Info: Need to create condition in this Script Include for menu item " + menuItemID + ".");
+				return false;
 			}
 		}
+
+		if (gr.sp_rectangle_menu_item.toString() == 'aead52e797cc1b90d3efb73de053afe6') {
+			if (gr.type == 'page') {
+				var currentPage = $sp.getParameter('id');
+				currentPage ? currentPage += '' : currentPage = '';
+
+				//cross-check page route maps
+				if (currentPage != '') {
+					var prm = new GlideRecord('sp_page_route_map');
+					prm.addQuery('portals', $sp.getPortalRecord().sys_id);
+					prm.addQuery('route_from_page.id', currentPage);
+					prm.query();
+
+					if (prm.next()) {
+						currentPage = prm.route_to_page.getDisplayValue();
+					}
+				}
+
+				if (currentPage == '' && gr.sp_page.id + '' == $sp.getDisplayValue(this.HOME_PAGE) + '') {
+					return false;
+				} else {
+					return $sp.canSeePage(gr.sp_page.id + '') && currentPage != gr.sp_page.id + '';
+				}
+			}
+		}
+	},
+
+	menuItemURL: function (menuItemID) {
+		//Populate with any URLs that would be better constructed using dynamic arguments rather than a specific string on the menu item itself
 	},
 
 	type: 'SVPDPUtils'
@@ -42,13 +71,13 @@ SVPDPUtils.prototype = {
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-21 22:14:57</sys_created_on>
         <sys_id>a548a1c6978cdb50d3efb73de053af9c</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>78</sys_mod_count>
         <sys_name>SVPDPUtils</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sys_script_include_a548a1c6978cdb50d3efb73de053af9c</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-21 22:43:43</sys_updated_on>
+        <sys_updated_on>2026-10-26 22:05:25</sys_updated_on>
     </sys_script_include>
 </record_update>
