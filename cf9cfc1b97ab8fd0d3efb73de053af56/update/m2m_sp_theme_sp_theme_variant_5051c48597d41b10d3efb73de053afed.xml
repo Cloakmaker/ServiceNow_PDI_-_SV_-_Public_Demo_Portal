@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_sp_theme_variant">
+    <m2m_sp_theme_sp_theme_variant action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <matching_now_experience_theme_variant/>
+        <name>SV PDP Theme - Burgundy</name>
+        <sys_class_name>m2m_sp_theme_sp_theme_variant</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-30 22:22:52</sys_created_on>
+        <sys_id>5051c48597d41b10d3efb73de053afed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SV PDP Theme.SV PDP Theme - Burgundy</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>m2m_sp_theme_sp_theme_variant_5051c48597d41b10d3efb73de053afed</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-30 22:22:52</sys_updated_on>
+        <theme display_value="SV PDP Theme">4428c553972f8fd0d3efb73de053af3b</theme>
+        <theme_variant display_value="SV PDP Theme - Burgundy">ce61888597d41b10d3efb73de053afe1</theme_variant>
+        <virtual_agent_branding/>
+    </m2m_sp_theme_sp_theme_variant>
+</record_update>

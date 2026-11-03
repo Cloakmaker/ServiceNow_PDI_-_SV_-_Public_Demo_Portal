@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>sv_pdp_signup_external_users_pre_activation</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript( /* GlideRecord */ current, /* TemplatePrinter */ template,
+	/* Optional EmailOutbound */
+	email, /* Optional GlideRecord */ email_action,
+	/* Optional GlideRecord */
+	event) {
+
+	// Add your code here
+	var jsonObject = event.parm2;
+	var obj = JSON.parse(jsonObject);
+	var firstName = current.first_name;
+	var resetlink = obj.resetlink;
+	var maskedemail = obj.maskedemail;
+	var isexisting = obj.isexisting;
+	var activationlink = obj.activationlink;
+	var reportIssueLink = "https://dev410487.service-now.com/sv_pdp?id=sc_cat_item&sys_id=274cafc1977f8f14d3efb73de053af5b";
+	var emailContent = {};
+
+	if (isexisting) {
+		// emailContent.templateContent =
+		//     "Hello  " + firstName + ",<br/>" +
+		//     "<br/>" +
+		//     "It looks like you have an account " + maskedemail + " already registered with us.<br/>" +
+		//     "Please click on the following link to reset your password<br/>" +
+		// 	"<a href=" + resetlink + "><b><u>Click here to reset your password</u></b></a><br/>" +
+		//     "If you do not want to reset your password, please ignore this message. Your password will not be reset.<br/>";
+		emailContent.templateContent =
+			"<p>A warmhearted hello to you, " + firstName + "!</p>" +
+			"<p>&nbsp;</p>" +
+			"<p>It appears you already have an account with <strong>" + maskedemail + "</strong> already registered.</p>" +
+			"<p>&nbsp;</p>" +
+			"<p>Please use the link given below to reset your password:</p>" +
+			"<p><a href=" + resetlink + "><b><u>Click here to reset your password</u></b></a></p>" +
+			"<p>&nbsp;</p>" +
+			"<p>If you run into further issues, please report the issue using the link below:</p>" +
+			"<p><a href=" + reportIssueLink + "><b><u>Click here to report an issue</u></b></a></p>" +
+			"<p>&nbsp;</p>" +
+			"<p>Sincerely,</p>" +
+			"<p>Sable N. Vimes</p>" +
+			"<p>CSA | CAD | CIS-DF | CIS-ITSM</p>";
+		email.setSubject("You are already registered with us");
+	} else {
+		// emailContent.templateContent =
+		//     "Hello  " + firstName + ",<br/>" +
+		//     "<br/>" +
+		//     "Thank you for registering with us! <br/> Please confirm that you want to use this as your account email address by clicking on the link given below: <br/>" +
+		//     "<a href=" + activationlink + "><b><u>Verify Account</u></b></a><br/>" +
+		//     "Please note that you cannot use your account without activation.<br/>" +
+		//     "The link will expire in 24 hours to keep your account secure.<br/>";
+		emailContent.templateContent =
+			"<p>A warmhearted hello to you, " + firstName + "!</p>" +
+			"<p>&nbsp;</p>" +
+			"<p>Thank you for expressing interest in exploring my instance of ServiceNow further.</p>" +
+			"<p>Before you can get started, please confirm you want to use this as your account email address by clicking on the link given below:</p>" +
+			"<p><a href=" + activationlink + "><b><u>Verify Account</u></b></a></p>" +
+			"<p>&nbsp;</p>" +
+			"<p>Sincerely,</p>" +
+			"<p>Sable N. Vimes</p>" +
+			"<p>CSA | CAD | CIS-DF | CIS-ITSM</p>";
+		email.setSubject("Verify your email address");
+	}
+
+
+	template.print(emailContent.templateContent);
+
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-29 20:47:24</sys_created_on>
+        <sys_id>24b22e2897d45710d3efb73de053af66</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>sv_pdp_signup_external_users_pre_activation</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sys_script_email_24b22e2897d45710d3efb73de053af66</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-29 22:38:48</sys_updated_on>
+    </sys_script_email>
+</record_update>
