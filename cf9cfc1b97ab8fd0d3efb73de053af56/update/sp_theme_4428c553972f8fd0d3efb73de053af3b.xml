@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_theme">
     <sp_theme action="INSERT_OR_UPDATE">
-        <css_variables/>
+        <css_variables>$brand-primary:#428bca;&#13;
+$body-bg:#fff;&#13;
+$state-success-text:#5cb85c;&#13;
+$sp-homepage-bg:#fff;&#13;
+$sp-navbar-divider-color:#7129a5;&#13;
+$text-color:#000000;&#13;
+$sp-logo-margin-y:.5rem;&#13;
+$navbar-inverse-link-hover-color:#6d737a;&#13;
+$panel-bg:#fff;&#13;
+$brand-success:#5cb85c;&#13;
+$navbar-inverse-bg:#471a68;&#13;
+$brand-warning:#f0ad4e;&#13;
+$brand-danger:#d9534f;&#13;
+$sp-tagline-color:#717171;&#13;
+$navbar-inverse-link-color:#efefef;&#13;
+$brand-info:#5bc0de;&#13;
+$link-color:#428bca;&#13;
+$sp-logo-margin-x:1rem;&#13;
+$btn-default-bg:#5bc0de;&#13;
+$text-muted:#979797;&#13;
+&#13;
+.scrub-footer {&#13;
+	hr {&#13;
+    	border: .1rem solid $sp-navbar-divider-color !important;&#13;
+	}&#13;
+	.sf-main .sf-links-container .masonry-root .sf-menu.masonry-cell {&#13;
+		border-left: .2rem solid $sp-navbar-divider-color;&#13;
+		.sf-menu-label {&#13;
+			color: $brand-info;&#13;
+		}&#13;
+	}&#13;
+}&#13;
+&#13;
+@media screen and (max-width: 635px) {&#13;
+	.v5cf9e3234305ce107b228dc226b8f2a2 .scrub-footer {&#13;
+    	.sf-main .sf-links-container .masonry-root .sf-menu.masonry-cell {&#13;
+        	border-top: .2rem solid $sp-navbar-divider-color;&#13;
+        }&#13;
+    }&#13;
+}</css_variables>
         <footer display_value="Portal Next Experience Footer">5cf9e3234305ce107b228dc226b8f2a2</footer>
         <footer_fixed>false</footer_fixed>
         <header display_value="SVPDP Portal Polaris Header">8fc075f597b30754d3efb73de053af92</header>
-        <icon>ba688193972f8fd0d3efb73de053afa3</icon>
-        <logo>2a480913972f8fd0d3efb73de053af7e</logo>
-        <logo_alt_text>SV</logo_alt_text>
+        <icon/>
+        <logo/>
+        <logo_alt_text/>
         <matching_now_experience_theme/>
         <name>SV PDP Theme</name>
         <navbar_fixed>true</navbar_fixed>
@@ -14,15 +53,15 @@
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-09-30 20:27:58</sys_created_on>
         <sys_id>4428c553972f8fd0d3efb73de053af3b</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>SV PDP Theme</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_theme_4428c553972f8fd0d3efb73de053af3b</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-26 13:34:01</sys_updated_on>
-        <turn_off_scss_compilation>true</turn_off_scss_compilation>
+        <sys_updated_on>2026-11-03 22:15:36</sys_updated_on>
+        <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
     <sys_translated_text action="delete_multiple" query="documentkey=4428c553972f8fd0d3efb73de053af3b"/>
 </record_update>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include">
+    <sp_css_include action="DELETE">
+        <lazy_load>false</lazy_load>
+        <name>SV PDP Default Theme Variables Include</name>
+        <rtl_css_file_url/>
+        <source>local</source>
+        <sp_css display_value="SV PDP Default Theme Variables">8000e419975c9b10d3efb73de053af2e</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-31 19:11:37</sys_created_on>
+        <sys_id>beef1019975c9b10d3efb73de053af0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SV PDP Default Theme Variables Include</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_css_include_beef1019975c9b10d3efb73de053af0c</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-31 19:11:37</sys_updated_on>
+        <url/>
+    </sp_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <name>sp_css_include_beef1019975c9b10d3efb73de053af0c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include"><sp_css_include action="INSERT_OR_UPDATE"><lazy_load>false</lazy_load><name>SV PDP Default Theme Variables Include</name><rtl_css_file_url/><source>local</source><sp_css display_value="SV PDP Default Theme Variables">8000e419975c9b10d3efb73de053af2e</sp_css><sys_class_name>sp_css_include</sys_class_name><sys_created_by>sable.vimes</sys_created_by><sys_created_on>2026-10-31 19:11:37</sys_created_on><sys_id>beef1019975c9b10d3efb73de053af0c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>SV PDP Default Theme Variables Include</sys_name><sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package><sys_policy/><sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope><sys_update_name>sp_css_include_beef1019975c9b10d3efb73de053af0c</sys_update_name><sys_updated_by>sable.vimes</sys_updated_by><sys_updated_on>2026-10-31 19:11:37</sys_updated_on><url/></sp_css_include></record_update>]]></payload>
+        <payload_hash>264547497</payload_hash>
+        <record_name>SV PDP Default Theme Variables Include</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-31 19:11:37</sys_created_on>
+        <sys_id>7f006819975c9b10d3efb73de053af08</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1935fe4df0000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-31 19:11:37</sys_updated_on>
+        <type>CSS Include</type>
+        <update_guid>3f006819485c9b10c508684195ea7d07</update_guid>
+        <update_guid_history>3f006819485c9b10c508684195ea7d07:264547497</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="SV PDP Default Theme Variables Include">31d06499975c9b10d3efb73de053af49</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-31 19:15:02</sys_created_on>
+        <sys_db_object display_value="" name="sp_css_include">sp_css_include</sys_db_object>
+        <sys_id>05020d532dba4d68802bddf5e4339e90</sys_id>
+        <sys_metadata>beef1019975c9b10d3efb73de053af0c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SV PDP Default Theme Variables Include</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>sp_css_include_beef1019975c9b10d3efb73de053af0c</sys_update_name>
+        <sys_update_version display_value="sp_css_include_beef1019975c9b10d3efb73de053af0c">7f006819975c9b10d3efb73de053af08</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-31 19:15:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

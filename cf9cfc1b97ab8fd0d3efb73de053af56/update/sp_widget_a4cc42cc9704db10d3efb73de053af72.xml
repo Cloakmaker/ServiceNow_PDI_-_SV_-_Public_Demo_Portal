@@ -30,7 +30,7 @@
 	var paddleX = (canvas.width-paddleWidth)/2;
 	var rightPressed = false;
 	var leftPressed = false;
-	var brickRowCount = 17;
+	var brickRowCount = 15;
 	var brickColumnCount = 7;
 	var brickPadding = 2;
 	var brickOffsetLeft = 10;
@@ -65,13 +65,13 @@
 
 	//Spells out S <smiley face> V
 	var letterMap = [];
-	letterMap[0]=[1, 3, 4, 5, 7, 9, 11, 13, 15];
-	letterMap[1]=[1, 3, 7, 9, 11, 13, 15];
-	letterMap[2]=[1, 3, 4, 5, 11, 13, 15];
-	letterMap[3]=[1, 5, 7, 9, 11, 13, 15];
-	letterMap[4]=[1, 3, 4, 5, 7, 8, 9, 11, 12, 15];
-	letterMap[5]=[1, 15];
-	letterMap[6]=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+	letterMap[0]=[0, 2, 3, 4, 6, 8, 10, 12, 14];
+	letterMap[1]=[0, 2, 6, 8, 10, 12, 14];
+	letterMap[2]=[0, 2, 3, 4, 10, 12, 14];
+	letterMap[3]=[0, 4, 6, 8, 10, 12, 14];
+	letterMap[4]=[0, 2, 3, 4, 6, 7, 8, 10, 11, 14];
+	letterMap[5]=[0, 14];
+	letterMap[6]=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
@@ -272,14 +272,14 @@
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-15 19:38:26</sys_created_on>
         <sys_id>a4cc42cc9704db10d3efb73de053af72</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>SV PDP Breakout Game</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_widget_a4cc42cc9704db10d3efb73de053af72</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-15 20:01:23</sys_updated_on>
+        <sys_updated_on>2026-11-03 22:55:51</sys_updated_on>
         <template><![CDATA[<div class="text-center">
   <canvas class="b bg-white" id="breakout" width="420" height="320"></canvas>
   <div class="text-muted">${Control using mouse or keyboard arrow keys}</div>
