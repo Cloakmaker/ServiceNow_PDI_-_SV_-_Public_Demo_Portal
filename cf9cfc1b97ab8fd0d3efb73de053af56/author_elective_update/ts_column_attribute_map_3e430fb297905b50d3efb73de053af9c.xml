@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ts_column_attribute_map">
+    <ts_column_attribute_map action="DELETE">
+        <column>x_885217_sv_publ_0_u_kb_overview</column>
+        <name display_value="Text Search Weight">5f0d253b53032300d0baddeeff7b1287</name>
+        <sys_class_name>ts_column_attribute_map</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-05 22:56:08</sys_created_on>
+        <sys_id>3e430fb297905b50d3efb73de053af9c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>5f0d253b53032300d0baddeeff7b1287</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>ts_column_attribute_map_3e430fb297905b50d3efb73de053af9c</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-05 22:56:08</sys_updated_on>
+        <table>u_kb_template_technical</table>
+        <ts_configuration display_value="kb_knowledge">28eefe427320330003da83a9fdf6a794</ts_configuration>
+        <value>25</value>
+    </ts_column_attribute_map>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <merge_base/>
+        <name>ts_column_attribute_map_3e430fb297905b50d3efb73de053af9c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ts_column_attribute_map"><ts_column_attribute_map action="INSERT_OR_UPDATE"><column>x_885217_sv_publ_0_u_kb_overview</column><name display_value="Text Search Weight">5f0d253b53032300d0baddeeff7b1287</name><sys_class_name>ts_column_attribute_map</sys_class_name><sys_created_by>sable.vimes</sys_created_by><sys_created_on>2026-11-05 22:56:08</sys_created_on><sys_id>3e430fb297905b50d3efb73de053af9c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>5f0d253b53032300d0baddeeff7b1287</sys_name><sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package><sys_policy/><sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope><sys_update_name>ts_column_attribute_map_3e430fb297905b50d3efb73de053af9c</sys_update_name><sys_updated_by>sable.vimes</sys_updated_by><sys_updated_on>2026-11-05 22:56:08</sys_updated_on><table>u_kb_template_technical</table><ts_configuration display_value="kb_knowledge">28eefe427320330003da83a9fdf6a794</ts_configuration><value>25</value></ts_column_attribute_map></record_update>]]></payload>
+        <payload_hash>1527503947</payload_hash>
+        <record_name>5f0d253b53032300d0baddeeff7b1287</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-05 22:56:08</sys_created_on>
+        <sys_id>d9638fb297905b50d3efb73de053afd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1aded3dd80000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-05 22:56:08</sys_updated_on>
+        <type>Text Index Column Attribute Map</type>
+        <update_guid>99638fb2fc905b50b5fcf75da1cd89d5</update_guid>
+        <update_guid_history>99638fb2fc905b50b5fcf75da1cd89d5:1527503947</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Text Search Weight">12c8abb697585b50d3efb73de053af2e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-06 01:39:29</sys_created_on>
+        <sys_db_object display_value="" name="ts_column_attribute_map">ts_column_attribute_map</sys_db_object>
+        <sys_id>01ac71c3f6614ce48089661769af21a4</sys_id>
+        <sys_metadata>3e430fb297905b50d3efb73de053af9c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>5f0d253b53032300d0baddeeff7b1287</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>ts_column_attribute_map_3e430fb297905b50d3efb73de053af9c</sys_update_name>
+        <sys_update_version display_value="ts_column_attribute_map_3e430fb297905b50d3efb73de053af9c">d9638fb297905b50d3efb73de053afd6</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-06 01:39:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

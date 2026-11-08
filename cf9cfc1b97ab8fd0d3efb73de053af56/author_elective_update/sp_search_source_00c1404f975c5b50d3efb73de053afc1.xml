@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_search_source">
+    <sp_search_source action="DELETE">
+        <advanced_typeahead_config>false</advanced_typeahead_config>
+        <condition/>
+        <data_fetch_script><![CDATA[var indexGroup = (typeof indexGroup !== "undefined") ? indexGroup : "portal_index_group";
+var queryLocation = queryLocation || 0;
+var count = count || 30;
+var facets = facets || {};
+(function(query, queryLocation, count, facets, indexGroup) {
+
+    return doContextualSearch(query, count, facets, queryLocation);
+
+    function doContextualSearch(query, count, facets, queryLocation) {
+        var results = [];
+        var taxonomyId = $sp.getTaxonomies();
+        var displayAttachments = gs.getProperty('glide.knowman.search.attachment', 'LINK_SNIPPET');
+        var kbArray = [];
+        var variables = {
+            author: [facets.author]
+        };
+        if (!taxonomyId) {
+            if (facets.kb_knowledge_base)
+                kbArray.push(facets.kb_knowledge_base);
+            else {
+                var kbs = $sp.getKnowledgeBases();
+                if (!gs.nil(kbs))
+                    kbArray = kbs.split(',');
+            }
+            variables.kb_knowledge_base = kbArray;
+            variables.kb_category = facets.category;
+        } else {
+            variables.taxonomy_topic = facets.topic;
+        }
+
+        // Set up request
+        var request = {
+            keyword: query,
+            language: "",
+            variables: variables,
+            resource: 'Knowledge',
+            context: gs.getProperty('glide.knowman.sp.search_context', 'Knowledge Search'),
+            kb_query: getFacetQuery(facets, taxonomyId),
+            social_query: "",
+            order: "relevancy,true",
+            start: queryLocation,
+            end: count,
+            attachment: displayAttachments != "NO_ATTACHMENT",
+            knowledge_fields: [
+                "number",
+                "sys_id",
+                "published"
+            ],
+            index_group: indexGroup
+        };
+
+        if (JSUtil.notNil(data.limit) && !isNaN(data.limit))
+            request.end = data.limit + queryLocation;
+
+        // execute search return result
+        var response = new global.KBPortalServiceImpl().getResultData(request);
+
+        // Send results back ro UI
+        var kbCount = 0;
+        for (var i = 0; i < response.results.length; i++) {
+            result = response.results[i];
+            var article = {};
+            article.sys_id = result.meta.sys_id.display_value;
+            article.number = result.meta.number.display_value;
+            article.short_description = result.title;
+            article.published = result.meta.published.display_value;
+            article.publishedUTC = result.meta.published.value;
+            article.type = "kb";
+            article.text = result.snippet || "";
+            article.text = $sp.stripHTML(article.text) + "";
+            article.text = article.text.substring(0, 200);
+            article.score = result.meta.score;
+            article.label = article.short_description;
+            article.primary = article.short_description;
+            article.query_location = queryLocation + kbCount;
+            article.table = "kb_knowledge"; // populate the table name for analytics
+            article.link = result.link;
+            article.attachments = result.meta.attachments || [];
+            for (var list = 0; list < article.attachments.length; list++) {
+                 if (article.attachments[list].terms)
+            		article.attachments[list].terms = $sp.stripHTML(article.attachments[list].terms);
+            }
+            results.push(article);
+
+            kbCount++;
+        }
+
+        if (!data.includeFacets)
+            $sp.logSearch('kb_knowledge', query, kbCount, data.searchType, data.portal, data.page);
+
+        if (results.length == 0)
+            return results;
+
+        if (results.length < count) {
+            var lastResult = results.pop();
+            lastResult.isLastResult = true;
+            results.push(lastResult);
+        }
+        return results;
+    }
+
+    // Build the kb_query based on facets
+    function getFacetQuery(facets, taxonomyId) {
+        var kbFacetMap = {
+            // updated
+            "more_ago": "^sys_updated_onRELATIVEGT@year@ago@2",
+            "year_ago": "^sys_updated_onRELATIVEGT@year@ago@1",
+            "month_ago": "^sys_updated_onRELATIVEGT@month@ago@1",
+            "week_ago": "^sys_updated_onRELATIVEGT@dayofweek@ago@7",
+            "day_ago": "^sys_updated_onRELATIVEGT@dayofweek@ago@1",
+
+            // viewcount
+            "more_than_500": "^sys_view_count>500",
+            "more_than_200": "^sys_view_count>200",
+            "more_than_100": "^sys_view_count>100",
+            "more_than_50": "^sys_view_count>50",
+            "more_than_10": "^sys_view_count>10",
+            "less_than_10": "^sys_view_count<10"
+        };
+
+        // Fill in facet info into kbQuery
+        var kbQuery = "";
+        //If portal is assosiated to taxonomy then add topic and taxonomy Filter 
+        if (taxonomyId)
+            kbQuery = "taxonomy_topic.active=true^taxonomy_topic.taxonomyIN" + taxonomyId;
+        if (facets.updated)
+            kbQuery += kbFacetMap[facets.updated];
+        if (facets.viewcount)
+            kbQuery += kbFacetMap[facets.viewcount];
+
+        // return built up query, stripping away leading ^
+        return (kbQuery.startsWith("^")) ? kbQuery.substring(1) : kbQuery;
+    }
+})(query, queryLocation, count, facets, indexGroup);]]></data_fetch_script>
+        <display_fields/>
+        <enable_typeahead>true</enable_typeahead>
+        <facet_generation_script><![CDATA[(function(query, facetService, searchResults) {
+
+    /* Calculate your facets here using facetService */
+    /* var stateFacet = facetService.createFacet('State', 'state'); */
+    /* stateFacet.addFacetItem('Facet Item Label', '123'); */
+
+    // If no facets selected and no results, don't show any facets
+    if (searchResults.length == 0 && Object.keys(facets).length == 0)
+        return;
+
+    var kbLabelMap = {
+        more_than_500: "More Than 500",
+        more_than_200: "More Than 200",
+        more_than_100: "More Than 100",
+        more_than_50: "More Than 50",
+        more_than_10: "More Than 10",
+        less_than_10: "Less Than 10",
+        more_ago: "Past 2 Years",
+        year_ago: "Past Year",
+        month_ago: "Past Month",
+        week_ago: "Past Week",
+        day_ago: "Past 24 Hours"
+    };
+
+    var kbArray = [];
+    var kbQuery = '';
+    var kbQueryDataObj = {};
+    var kbQueryData = '';
+    var taxonomyId = $sp.getTaxonomies();
+    if (taxonomyId) {
+        kbQuery = "taxonomy_topic.active=true^taxonomy_topic.taxonomyIN" + taxonomyId;
+        kbQueryDataObj = {
+            value: 'kb',
+            dynamic: false,
+            filters: [{
+                id: 'kb',
+                label: 'Knowledge base',
+                order: 1,
+                query: [{
+                    display_value: kbQuery,
+                    table: 'kb_knowledge',
+                    value: kbQuery
+                }]
+            }]
+        };
+        kbQueryData = JSON.stringify(kbQueryDataObj);
+    } else {
+        var kbs = $sp.getKnowledgeBases();
+        if (!gs.nil(kbs)) {
+            kbArray = kbs.split(',');
+            kbQuery = 'kb_knowledge_baseIN' + kbs;
+            kbQueryDataObj = {
+                value: 'kb',
+                dynamic: false,
+                filters: [{
+                    id: 'kb',
+                    label: 'Knowledge base',
+                    order: 1,
+                    query: [{
+                        display_value: kbQuery,
+                        table: 'kb_knowledge',
+                        value: kbQuery
+                    }]
+                }]
+            };
+            kbQueryData = JSON.stringify(kbQueryDataObj);
+        }
+    }
+
+	var honourSearchOrder = gs.getProperty('glide.sp.honour.kb.search.order', false);
+	var searchOrderBy = honourSearchOrder === 'true' ? '' : 'sys_view_count,true';
+	
+    var kbFacets = new global.KBPortalServiceImpl().getAllFacets(query, '',
+        '{"kb_knowledge_base":{"aggregate":false,"include_null":false,"orderby":"label","table":"kb_knowledge","value":[]},"author":{"aggregate":false,"include_null":false,"orderby":"label","table":"kb_knowledge","value":[]},"kb_category":{"aggregate":false,"include_null":true,"orderby":"label","table":"kb_knowledge","value":[]},"taxonomy_topic":{"aggregate":false,"include_null":false,"orderby":"label","table":"kb_knowledge","value":[]}}',
+        '{' + (kbQueryData ? 'kb:' + kbQueryData + "," : "") + '"modified":{"dynamic":false,"filters":[{"id":"more_ago","label":"Past 2 Years","order":5,"query":[{"display_value":"sys_updated_onRELATIVEGT@year@ago@2^sys_updated_onRELATIVELT@year@ago@1","table":"","value":"sys_updated_onRELATIVEGT@year@ago@2"}]},{"id":"year_ago","label":"Past Year","order":4,"query":[{"display_value":"sys_updated_onRELATIVEGT@year@ago@1^sys_updated_onRELATIVELT@month@ago@1","table":"","value":"sys_updated_onRELATIVEGT@year@ago@1"}]},{"id":"month_ago","label":"Past Month","order":3,"query":[{"display_value":"sys_updated_onRELATIVEGT@month@ago@1^sys_updated_onRELATIVELT@dayofweek@ago@7","table":"","value":"sys_updated_onRELATIVEGT@month@ago@1"}]},{"id":"week_ago","label":"Past Week","order":2,"query":[{"display_value":"sys_updated_onRELATIVEGT@dayofweek@ago@2^sys_updated_onRELATIVELT@dayofweek@ago@1","table":"","value":"sys_updated_onRELATIVEGT@dayofweek@ago@7"}]},{"id":"day_ago","label":"Past 24 Hours","order":1,"query":[{"display_value":"sys_updated_onRELATIVEGT@dayofweek@ago@1","table":"","value":"sys_updated_onRELATIVEGT@dayofweek@ago@1"}]}],"value":""},"resources":{"dynamic":true,"filters":"","value":"Knowledge"},"view_count":{"dynamic":false,"filters":[{"id":"more_than_500","label":"More Than 500","order":6,"query":[{"display_value":"sys_view_count>500","table":"kb_knowledge","value":"sys_view_count>500"}]},{"id":"more_than_200","label":"More Than 200","order":5,"query":[{"display_value":"sys_view_count>200^sys_view_count<500","table":"kb_knowledge","value":"sys_view_count>200"}]},{"id":"more_than_100","label":"More Than 100","order":4,"query":[{"display_value":"sys_view_count>100^sys_view_count<200","table":"kb_knowledge","value":"sys_view_count>100"}]},{"id":"more_than_50","label":"More Than 50","order":3,"query":[{"display_value":"sys_view_count>50^sys_view_count<100","table":"kb_knowledge","value":"sys_view_count>50"}]},{"id":"more_than_10","label":"More Than 10","order":2,"query":[{"display_value":"sys_view_count>10^sys_view_count<50","table":"kb_knowledge","value":"sys_view_count>10"}]},{"id":"less_than_10","label":"Less Than 10","order":1,"query":[{"display_value":"sys_view_count<11","table":"kb_knowledge","value":"sys_view_count<11"}]}],"value":""}}',
+        searchOrderBy);
+
+    var kbFacetObj = JSON.parse(kbFacets);
+
+    if (taxonomyId) {
+        createMultiChoiceFacetFromKB("UppercaseTopic", "topic", kbFacetObj.taxonomy_topic, 'order');
+    } else {
+        if (kbFacetObj.kb_knowledge_base && kbFacetObj.kb_knowledge_base.length > 1)
+            createVariableFacetFromKB("Knowledge Base", "kb_knowledge_base", kbFacetObj.kb_knowledge_base, 'label');
+        createMultiChoiceFacetFromKB("Category", "category", kbFacetObj.kb_category, 'order');
+    }
+
+    createVariableFacetFromKB("Author", "author", kbFacetObj.author, 'label');
+
+    createVariableFacetFromKB("Last Modified", "updated", kbFacetObj.modified, 'order');
+    createVariableFacetFromKB("View Count", "viewcount", kbFacetObj.view_count, 'order');
+
+    function createVariableFacetFromKB(label, variable, values, orderBy) {
+        if (!values || values.length == 0)
+            return;
+
+        var kbFacet = facetService.createFacet(label, variable);
+
+        if (orderBy)
+            values.sort(function(a, b) {
+                if (a[orderBy] < b[orderBy])
+                    return -1;
+                if (a[orderBy] > b[orderBy])
+                    return 1;
+                return 0;
+            });
+
+        if (facets.author && variable == 'author')
+            kbFacet.addFacetItem(getLabel(values, facets[variable]), facets[variable]);
+        else if (facets.updated && variable == 'updated' && kbLabelMap[facets.updated])
+            kbFacet.addFacetItem(kbLabelMap[facets.updated], facets.updated);
+        else if (facets.viewcount && variable == 'viewcount' && kbLabelMap[facets.viewcount])
+            kbFacet.addFacetItem(kbLabelMap[facets.viewcount], facets.viewcount);
+        else if (facets.kb_knowledge_base && variable == 'kb_knowledge_base')
+            kbFacet.addFacetItem(getLabel(values, facets[variable]), facets[variable]);
+        else {
+            for (var i in values)
+                kbFacet.addFacetItem(values[i].label, values[i].id);
+        }
+    }
+
+    function createMultiChoiceFacetFromKB(label, variable, values, orderBy) {
+        if (!values || values.length == 0)
+            return;
+
+        var kbFacet = facetService.createMultiChoiceFacet(label, variable);
+        var kbMap = {};
+        for (var i in values) {
+            var key = values[i].label;
+            var value = values[i].id;
+            var parent = new global.KBParentData().getParentCategory(value, key);
+            key = parent.join(' > ');
+            kbMap[key] = value;
+        }
+
+        var labels = Object.keys(kbMap).sort();
+        for (i = 0; i < labels.length; i++) {
+            var currentLabel = labels[i];
+            kbFacet.addFacetItem(currentLabel, kbMap[currentLabel]);
+        }
+    }
+
+    function getLabel(values, id) {
+        for (var i in values) {
+            if (values[i].id == id)
+                return values[i].label;
+        }
+        return "";
+    }
+})(query, facetService, searchResults);]]></facet_generation_script>
+        <id>scoped-kb</id>
+        <is_scripted_source>true</is_scripted_source>
+        <name>Scoped Knowledge Bases</name>
+        <page display_value="kb_article">dea5792147132100ba13a5554ee4902d</page>
+        <pagination_supported>false</pagination_supported>
+        <primary_display_field/>
+        <roles>snc_external,snc_internal</roles>
+        <search_page_template><![CDATA[<div>
+  <a href="{{item.link}}" class="h4 text-primary m-b-sm block">
+    <i class="fa fa-book m-r-sm"></i>
+    <span ng-bind-html="highlight(escapeHTML(item.short_description), escapeHTML(data.q))"></span></a>
+    <p ng-bind-html="highlight(escapeHTML(item.text), escapeHTML(data.q))"></p>
+  <div style="padding-left: 24px; font-size: small;" ng-repeat="attachment in ::item.attachments">
+    <span title="${Attached by} {{::attachment.sys_created_by}} : {{::attachment.sys_created_on}}" class="glyphicon glyphicon-paperclip"></span>
+    <a ng-href="{{::attachment.link + '&view=true'}}" aria-label="${Download} {{::attachment.file_name}}">{{::attachment.file_name}}</a>
+    <a href="{{::attachment.link}}" title="${Download} {{::attachment.file_name}}">
+    	<span class="glyphicon glyphicon-download-alt"></span>
+    </a>
+    <p ng-if="attachment.terms" ng-bind-html="::highlight(escapeHTML(attachment.terms), escapeHTML(data.q))"></p>
+  </div>
+
+  <span class="text-muted">${Article}: {{item.number}}</span>
+  <span class="text-muted">
+    <span class="m-l-xs m-r-xs" aria-hidden="true"> &middot; </span>
+    ${Published}: <sn-day-ago date="item.publishedUTC"/>
+  </span>
+</div>]]></search_page_template>
+        <source_table/>
+        <sys_class_name>sp_search_source</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-06 03:35:10</sys_created_on>
+        <sys_id>00c1404f975c5b50d3efb73de053afc1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Scoped Knowledge Bases</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_search_source_00c1404f975c5b50d3efb73de053afc1</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-06 03:35:25</sys_updated_on>
+        <typeahead_glyph>file-text-o</typeahead_glyph>
+        <typeahead_template/>
+    </sp_search_source>
+    <sys_translated_text action="DELETE" query="documentkey=00c1404f975c5b50d3efb73de053afc1"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <merge_base/>
+        <name>sp_search_source_00c1404f975c5b50d3efb73de053afc1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_search_source"&gt;&lt;sp_search_source action="INSERT_OR_UPDATE"&gt;&lt;advanced_typeahead_config&gt;false&lt;/advanced_typeahead_config&gt;&lt;condition/&gt;&lt;data_fetch_script&gt;&lt;![CDATA[var indexGroup = (typeof indexGroup !== "undefined") ? indexGroup : "portal_index_group";
+var queryLocation = queryLocation || 0;
+var count = count || 30;
+var facets = facets || {};
+(function(query, queryLocation, count, facets, indexGroup) {
+
+    return doContextualSearch(query, count, facets, queryLocation);
+
+    function doContextualSearch(query, count, facets, queryLocation) {
+        var results = [];
+        var taxonomyId = $sp.getTaxonomies();
+        var displayAttachments = gs.getProperty('glide.knowman.search.attachment', 'LINK_SNIPPET');
+        var kbArray = [];
+        var variables = {
+            author: [facets.author]
+        };
+        if (!taxonomyId) {
+            if (facets.kb_knowledge_base)
+                kbArray.push(facets.kb_knowledge_base);
+            else {
+                var kbs = $sp.getKnowledgeBases();
+                if (!gs.nil(kbs))
+                    kbArray = kbs.split(',');
+            }
+            variables.kb_knowledge_base = kbArray;
+            variables.kb_category = facets.category;
+        } else {
+            variables.taxonomy_topic = facets.topic;
+        }
+
+        // Set up request
+        var request = {
+            keyword: query,
+            language: "",
+            variables: variables,
+            resource: 'Knowledge',
+            context: gs.getProperty('glide.knowman.sp.search_context', 'Knowledge Search'),
+            kb_query: getFacetQuery(facets, taxonomyId),
+            social_query: "",
+            order: "relevancy,true",
+            start: queryLocation,
+            end: count,
+            attachment: displayAttachments != "NO_ATTACHMENT",
+            knowledge_fields: [
+                "number",
+                "sys_id",
+                "published"
+            ],
+            index_group: indexGroup
+        };
+
+        if (JSUtil.notNil(data.limit) &amp;&amp; !isNaN(data.limit))
+            request.end = data.limit + queryLocation;
+
+        // execute search return result
+        var response = new global.KBPortalServiceImpl().getResultData(request);
+
+        // Send results back ro UI
+        var kbCount = 0;
+        for (var i = 0; i &lt; response.results.length; i++) {
+            result = response.results[i];
+            var article = {};
+            article.sys_id = result.meta.sys_id.display_value;
+            article.number = result.meta.number.display_value;
+            article.short_description = result.title;
+            article.published = result.meta.published.display_value;
+            article.publishedUTC = result.meta.published.value;
+            article.type = "kb";
+            article.text = result.snippet || "";
+            article.text = $sp.stripHTML(article.text) + "";
+            article.text = article.text.substring(0, 200);
+            article.score = result.meta.score;
+            article.label = article.short_description;
+            article.primary = article.short_description;
+            article.query_location = queryLocation + kbCount;
+            article.table = "kb_knowledge"; // populate the table name for analytics
+            article.link = result.link;
+            article.attachments = result.meta.attachments || [];
+            for (var list = 0; list &lt; article.attachments.length; list++) {
+                 if (article.attachments[list].terms)
+            		article.attachments[list].terms = $sp.stripHTML(article.attachments[list].terms);
+            }
+            results.push(article);
+
+            kbCount++;
+        }
+
+        if (!data.includeFacets)
+            $sp.logSearch('kb_knowledge', query, kbCount, data.searchType, data.portal, data.page);
+
+        if (results.length == 0)
+            return results;
+
+        if (results.length &lt; count) {
+            var lastResult = results.pop();
+            lastResult.isLastResult = true;
+            results.push(lastResult);
+        }
+        return results;
+    }
+
+    // Build the kb_query based on facets
+    function getFacetQuery(facets, taxonomyId) {
+        var kbFacetMap = {
+            // updated
+            "more_ago": "^sys_updated_onRELATIVEGT@year@ago@2",
+            "year_ago": "^sys_updated_onRELATIVEGT@year@ago@1",
+            "month_ago": "^sys_updated_onRELATIVEGT@month@ago@1",
+            "week_ago": "^sys_updated_onRELATIVEGT@dayofweek@ago@7",
+            "day_ago": "^sys_updated_onRELATIVEGT@dayofweek@ago@1",
+
+            // viewcount
+            "more_than_500": "^sys_view_count&gt;500",
+            "more_than_200": "^sys_view_count&gt;200",
+            "more_than_100": "^sys_view_count&gt;100",
+            "more_than_50": "^sys_view_count&gt;50",
+            "more_than_10": "^sys_view_count&gt;10",
+            "less_than_10": "^sys_view_count&lt;10"
+        };
+
+        // Fill in facet info into kbQuery
+        var kbQuery = "";
+        //If portal is assosiated to taxonomy then add topic and taxonomy Filter 
+        if (taxonomyId)
+            kbQuery = "taxonomy_topic.active=true^taxonomy_topic.taxonomyIN" + taxonomyId;
+        if (facets.updated)
+            kbQuery += kbFacetMap[facets.updated];
+        if (facets.viewcount)
+            kbQuery += kbFacetMap[facets.viewcount];
+
+        // return built up query, stripping away leading ^
+        return (kbQuery.startsWith("^")) ? kbQuery.substring(1) : kbQuery;
+    }
+})(query, queryLocation, count, facets, indexGroup);]]&gt;&lt;/data_fetch_script&gt;&lt;display_fields/&gt;&lt;enable_typeahead&gt;true&lt;/enable_typeahead&gt;&lt;facet_generation_script&gt;&lt;![CDATA[(function(query, facetService, searchResults) {
+
+    /* Calculate your facets here using facetService */
+    /* var stateFacet = facetService.createFacet('State', 'state'); */
+    /* stateFacet.addFacetItem('Facet Item Label', '123'); */
+
+    // If no facets selected and no results, don't show any facets
+    if (searchResults.length == 0 &amp;&amp; Object.keys(facets).length == 0)
+        return;
+
+    var kbLabelMap = {
+        more_than_500: "More Than 500",
+        more_than_200: "More Than 200",
+        more_than_100: "More Than 100",
+        more_than_50: "More Than 50",
+        more_than_10: "More Than 10",
+        less_than_10: "Less Than 10",
+        more_ago: "Past 2 Years",
+        year_ago: "Past Year",
+        month_ago: "Past Month",
+        week_ago: "Past Week",
+        day_ago: "Past 24 Hours"
+    };
+
+    var kbArray = [];
+    var kbQuery = '';
+    var kbQueryDataObj = {};
+    var kbQueryData = '';
+    var taxonomyId = $sp.getTaxonomies();
+    if (taxonomyId) {
+        kbQuery = "taxonomy_topic.active=true^taxonomy_topic.taxonomyIN" + taxonomyId;
+        kbQueryDataObj = {
+            value: 'kb',
+            dynamic: false,
+            filters: [{
+                id: 'kb',
+                label: 'Knowledge base',
+                order: 1,
+                query: [{
+                    display_value: kbQuery,
+                    table: 'kb_knowledge',
+                    value: kbQuery
+                }]
+            }]
+        };
+        kbQueryData = JSON.stringify(kbQueryDataObj);
+    } else {
+        var kbs = $sp.getKnowledgeBases();
+        if (!gs.nil(kbs)) {
+            kbArray = kbs.split(',');
+            kbQuery = 'kb_knowledge_baseIN' + kbs;
+            kbQueryDataObj = {
+                value: 'kb',
+                dynamic: false,
+                filters: [{
+                    id: 'kb',
+                    label: 'Knowledge base',
+                    order: 1,
+                    query: [{
+                        display_value: kbQuery,
+                        table: 'kb_knowledge',
+                        value: kbQuery
+                    }]
+                }]
+            };
+            kbQueryData = JSON.stringify(kbQueryDataObj);
+        }
+    }
+
+	var honourSearchOrder = gs.getProperty('glide.sp.honour.kb.search.order', false);
+	var searchOrderBy = honourSearchOrder === 'true' ? '' : 'sys_view_count,true';
+	
+    var kbFacets = new global.KBPortalServiceImpl().getAllFacets(query, '',
+        '{"kb_knowledge_base":{"aggregate":false,"include_null":false,"orderby":"label","table":"kb_knowledge","value":[]},"author":{"aggregate":false,"include_null":false,"orderby":"label","table":"kb_knowledge","value":[]},"kb_category":{"aggregate":false,"include_null":true,"orderby":"label","table":"kb_knowledge","value":[]},"taxonomy_topic":{"aggregate":false,"include_null":false,"orderby":"label","table":"kb_knowledge","value":[]}}',
+        '{' + (kbQueryData ? 'kb:' + kbQueryData + "," : "") + '"modified":{"dynamic":false,"filters":[{"id":"more_ago","label":"Past 2 Years","order":5,"query":[{"display_value":"sys_updated_onRELATIVEGT@year@ago@2^sys_updated_onRELATIVELT@year@ago@1","table":"","value":"sys_updated_onRELATIVEGT@year@ago@2"}]},{"id":"year_ago","label":"Past Year","order":4,"query":[{"display_value":"sys_updated_onRELATIVEGT@year@ago@1^sys_updated_onRELATIVELT@month@ago@1","table":"","value":"sys_updated_onRELATIVEGT@year@ago@1"}]},{"id":"month_ago","label":"Past Month","order":3,"query":[{"display_value":"sys_updated_onRELATIVEGT@month@ago@1^sys_updated_onRELATIVELT@dayofweek@ago@7","table":"","value":"sys_updated_onRELATIVEGT@month@ago@1"}]},{"id":"week_ago","label":"Past Week","order":2,"query":[{"display_value":"sys_updated_onRELATIVEGT@dayofweek@ago@2^sys_updated_onRELATIVELT@dayofweek@ago@1","table":"","value":"sys_updated_onRELATIVEGT@dayofweek@ago@7"}]},{"id":"day_ago","label":"Past 24 Hours","order":1,"query":[{"display_value":"sys_updated_onRELATIVEGT@dayofweek@ago@1","table":"","value":"sys_updated_onRELATIVEGT@dayofweek@ago@1"}]}],"value":""},"resources":{"dynamic":true,"filters":"","value":"Knowledge"},"view_count":{"dynamic":false,"filters":[{"id":"more_than_500","label":"More Than 500","order":6,"query":[{"display_value":"sys_view_count&gt;500","table":"kb_knowledge","value":"sys_view_count&gt;500"}]},{"id":"more_than_200","label":"More Than 200","order":5,"query":[{"display_value":"sys_view_count&gt;200^sys_view_count&lt;500","table":"kb_knowledge","value":"sys_view_count&gt;200"}]},{"id":"more_than_100","label":"More Than 100","order":4,"query":[{"display_value":"sys_view_count&gt;100^sys_view_count&lt;200","table":"kb_knowledge","value":"sys_view_count&gt;100"}]},{"id":"more_than_50","label":"More Than 50","order":3,"query":[{"display_value":"sys_view_count&gt;50^sys_view_count&lt;100","table":"kb_knowledge","value":"sys_view_count&gt;50"}]},{"id":"more_than_10","label":"More Than 10","order":2,"query":[{"display_value":"sys_view_count&gt;10^sys_view_count&lt;50","table":"kb_knowledge","value":"sys_view_count&gt;10"}]},{"id":"less_than_10","label":"Less Than 10","order":1,"query":[{"display_value":"sys_view_count&lt;11","table":"kb_knowledge","value":"sys_view_count&lt;11"}]}],"value":""}}',
+        searchOrderBy);
+
+    var kbFacetObj = JSON.parse(kbFacets);
+
+    if (taxonomyId) {
+        createMultiChoiceFacetFromKB("UppercaseTopic", "topic", kbFacetObj.taxonomy_topic, 'order');
+    } else {
+        if (kbFacetObj.kb_knowledge_base &amp;&amp; kbFacetObj.kb_knowledge_base.length &gt; 1)
+            createVariableFacetFromKB("Knowledge Base", "kb_knowledge_base", kbFacetObj.kb_knowledge_base, 'label');
+        createMultiChoiceFacetFromKB("Category", "category", kbFacetObj.kb_category, 'order');
+    }
+
+    createVariableFacetFromKB("Author", "author", kbFacetObj.author, 'label');
+
+    createVariableFacetFromKB("Last Modified", "updated", kbFacetObj.modified, 'order');
+    createVariableFacetFromKB("View Count", "viewcount", kbFacetObj.view_count, 'order');
+
+    function createVariableFacetFromKB(label, variable, values, orderBy) {
+        if (!values || values.length == 0)
+            return;
+
+        var kbFacet = facetService.createFacet(label, variable);
+
+        if (orderBy)
+            values.sort(function(a, b) {
+                if (a[orderBy] &lt; b[orderBy])
+                    return -1;
+                if (a[orderBy] &gt; b[orderBy])
+                    return 1;
+                return 0;
+            });
+
+        if (facets.author &amp;&amp; variable == 'author')
+            kbFacet.addFacetItem(getLabel(values, facets[variable]), facets[variable]);
+        else if (facets.updated &amp;&amp; variable == 'updated' &amp;&amp; kbLabelMap[facets.updated])
+            kbFacet.addFacetItem(kbLabelMap[facets.updated], facets.updated);
+        else if (facets.viewcount &amp;&amp; variable == 'viewcount' &amp;&amp; kbLabelMap[facets.viewcount])
+            kbFacet.addFacetItem(kbLabelMap[facets.viewcount], facets.viewcount);
+        else if (facets.kb_knowledge_base &amp;&amp; variable == 'kb_knowledge_base')
+            kbFacet.addFacetItem(getLabel(values, facets[variable]), facets[variable]);
+        else {
+            for (var i in values)
+                kbFacet.addFacetItem(values[i].label, values[i].id);
+        }
+    }
+
+    function createMultiChoiceFacetFromKB(label, variable, values, orderBy) {
+        if (!values || values.length == 0)
+            return;
+
+        var kbFacet = facetService.createMultiChoiceFacet(label, variable);
+        var kbMap = {};
+        for (var i in values) {
+            var key = values[i].label;
+            var value = values[i].id;
+            var parent = new global.KBParentData().getParentCategory(value, key);
+            key = parent.join(' &gt; ');
+            kbMap[key] = value;
+        }
+
+        var labels = Object.keys(kbMap).sort();
+        for (i = 0; i &lt; labels.length; i++) {
+            var currentLabel = labels[i];
+            kbFacet.addFacetItem(currentLabel, kbMap[currentLabel]);
+        }
+    }
+
+    function getLabel(values, id) {
+        for (var i in values) {
+            if (values[i].id == id)
+                return values[i].label;
+        }
+        return "";
+    }
+})(query, facetService, searchResults);]]&gt;&lt;/facet_generation_script&gt;&lt;id&gt;scoped-kb&lt;/id&gt;&lt;is_scripted_source&gt;true&lt;/is_scripted_source&gt;&lt;name&gt;Scoped Knowledge Bases&lt;/name&gt;&lt;page display_value="kb_article"&gt;dea5792147132100ba13a5554ee4902d&lt;/page&gt;&lt;pagination_supported&gt;false&lt;/pagination_supported&gt;&lt;primary_display_field/&gt;&lt;roles&gt;snc_external,snc_internal&lt;/roles&gt;&lt;search_page_template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;a href="{{item.link}}" class="h4 text-primary m-b-sm block"&gt;
+    &lt;i class="fa fa-book m-r-sm"&gt;&lt;/i&gt;
+    &lt;span ng-bind-html="highlight(escapeHTML(item.short_description), escapeHTML(data.q))"&gt;&lt;/span&gt;&lt;/a&gt;
+    &lt;p ng-bind-html="highlight(escapeHTML(item.text), escapeHTML(data.q))"&gt;&lt;/p&gt;
+  &lt;div style="padding-left: 24px; font-size: small;" ng-repeat="attachment in ::item.attachments"&gt;
+    &lt;span title="${Attached by} {{::attachment.sys_created_by}} : {{::attachment.sys_created_on}}" class="glyphicon glyphicon-paperclip"&gt;&lt;/span&gt;
+    &lt;a ng-href="{{::attachment.link + '&amp;view=true'}}" aria-label="${Download} {{::attachment.file_name}}"&gt;{{::attachment.file_name}}&lt;/a&gt;
+    &lt;a href="{{::attachment.link}}" title="${Download} {{::attachment.file_name}}"&gt;
+    	&lt;span class="glyphicon glyphicon-download-alt"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;p ng-if="attachment.terms" ng-bind-html="::highlight(escapeHTML(attachment.terms), escapeHTML(data.q))"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;span class="text-muted"&gt;${Article}: {{item.number}}&lt;/span&gt;
+  &lt;span class="text-muted"&gt;
+    &lt;span class="m-l-xs m-r-xs" aria-hidden="true"&gt; &amp;middot; &lt;/span&gt;
+    ${Published}: &lt;sn-day-ago date="item.publishedUTC"/&gt;
+  &lt;/span&gt;
+&lt;/div&gt;]]&gt;&lt;/search_page_template&gt;&lt;source_table/&gt;&lt;sys_class_name&gt;sp_search_source&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sable.vimes&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-11-06 03:35:10&lt;/sys_created_on&gt;&lt;sys_id&gt;00c1404f975c5b50d3efb73de053afc1&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Scoped Knowledge Bases&lt;/sys_name&gt;&lt;sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0"&gt;cf9cfc1b97ab8fd0d3efb73de053af56&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="SV - Public Demo Portal"&gt;cf9cfc1b97ab8fd0d3efb73de053af56&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_search_source_00c1404f975c5b50d3efb73de053afc1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sable.vimes&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-11-06 03:35:25&lt;/sys_updated_on&gt;&lt;typeahead_glyph&gt;file-text-o&lt;/typeahead_glyph&gt;&lt;typeahead_template/&gt;&lt;/sp_search_source&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=00c1404f975c5b50d3efb73de053afc1"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-890522429</payload_hash>
+        <record_name>Scoped Knowledge Bases</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-06 03:35:26</sys_created_on>
+        <sys_id>24538803979c5b50d3efb73de053af5c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1aeecf04d0000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-06 03:35:26</sys_updated_on>
+        <type>Search Source</type>
+        <update_guid>60538803779c5b5056e9a914a463955b</update_guid>
+        <update_guid_history>60538803779c5b5056e9a914a463955b:-890522429,6c430803d29c5b5007aaccaffd130845:1213381416</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Scoped Knowledge Bases">ad35c847979c5b50d3efb73de053afe2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-06 03:43:41</sys_created_on>
+        <sys_db_object display_value="" name="sp_search_source">sp_search_source</sys_db_object>
+        <sys_id>c5b8f9537af94f38a5c38509c79b4924</sys_id>
+        <sys_metadata>00c1404f975c5b50d3efb73de053afc1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scoped Knowledge Bases</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>sp_search_source_00c1404f975c5b50d3efb73de053afc1</sys_update_name>
+        <sys_update_version display_value="sp_search_source_00c1404f975c5b50d3efb73de053afc1">24538803979c5b50d3efb73de053af5c</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-06 03:43:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
