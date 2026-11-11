@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>$kb-title-color: $brand-primary-darker !default;&#13;
+section.page{&#13;
+  padding-top: 0;&#13;
+}main.body {&#13;
+  padding-top: 1rem;&#13;
+}&#13;
+input[type=checkbox]{&#13;
+ height:inherit;&#13;
+ }&#13;
+.noPadding {&#13;
+    padding-left: 0px !important;&#13;
+    padding-right: 0px !important;&#13;
+}&#13;
+a {&#13;
+  color : $kb-title-color;&#13;
+}&#13;
+&#13;
+</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>sv_pdp_kb_search</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>true</public>
+        <roles>snc_external,snc_internal</roles>
+        <seo_script display_value="SPSEOHeaderTagsArticleSearch">6e4e993ffd8e7010f877d787532be907</seo_script>
+        <short_description>SV PDP Knowledge Search</short_description>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-09 22:19:02</sys_created_on>
+        <sys_id>0d41afc49724db10d3efb73de053af87</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>sv_pdp_kb_search</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_page_0d41afc49724db10d3efb73de053af87</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-11 18:07:53</sys_updated_on>
+        <title>Knowledge Search</title>
+        <use_seo_script>true</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=0d41afc49724db10d3efb73de053af87"/>
+</record_update>
