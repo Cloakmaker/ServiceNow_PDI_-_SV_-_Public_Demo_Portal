@@ -6,7 +6,7 @@
         <css>canvas { width: 100%; max-width: 420px; }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
-        <description/>
+        <description>SV PDP Breakout Game</description>
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
@@ -262,7 +262,7 @@
 
 	draw();
 }]]></link>
-        <name>SV PDP Breakout Game</name>
+        <name>Breakout Game</name>
         <option_schema/>
         <public>true</public>
         <roles/>
@@ -272,14 +272,14 @@
         <sys_created_by>sable.vimes</sys_created_by>
         <sys_created_on>2026-10-15 19:38:26</sys_created_on>
         <sys_id>a4cc42cc9704db10d3efb73de053af72</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>SV PDP Breakout Game</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Breakout Game</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>sp_widget_a4cc42cc9704db10d3efb73de053af72</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-11-03 22:55:51</sys_updated_on>
+        <sys_updated_on>2026-11-11 18:24:00</sys_updated_on>
         <template><![CDATA[<div class="text-center">
   <canvas class="b bg-white" id="breakout" width="420" height="320"></canvas>
   <div class="text-muted">${Control using mouse or keyboard arrow keys}</div>

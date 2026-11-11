@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>8</order>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">d541afc49724db10d3efb73de053afeb</sp_column>
+        <sp_widget display_value="Knowledge Query Facet">72e1a6cbdb83220099f93691f0b8f549</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-09 22:19:04</sys_created_on>
+        <sys_id>1d41efc49724db10d3efb73de053af0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Rating</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>sp_instance_1d41efc49724db10d3efb73de053af0f</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-09 22:19:04</sys_updated_on>
+        <title>Rating</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"facet_id": {
+		"value": "rating",
+		"displayValue": "rating"
+	},
+	"template": {
+		"value": "kb_facet_query_rating_template",
+		"displayValue": "Rating Query Template"
+	},
+	"custom_template": {
+		"value": "",
+		"displayValue": ""
+	},
+	"facet_options": {
+		"value": "[{\"label\":\"4+ Rating\",\"id\":\"rating_5\",\"order\":5,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>4\",\"display_value\":\"rating=5\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"3+ Rating\",\"id\":\"rating_4\",\"order\":4,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>3\",\"display_value\":\"rating=4\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"2+ Rating\",\"id\":\"rating_3\",\"order\":3,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>2\",\"display_value\":\"rating=3\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"1+ Rating\",\"id\":\"rating_2\",\"order\":2,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>1\",\"display_value\":\"rating=2\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"Rated\",\"id\":\"rating_1\",\"order\":1,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>0\",\"display_value\":\"rating=1\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"Any Rating\",\"id\":\"rating_0\",\"order\":0,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"ratingANYTHING\",\"display_value\":\"ratingISEMPTY\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]}]",
+		"displayValue": "[{\"label\":\"4+ Rating\",\"id\":\"rating_5\",\"order\":5,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>4\",\"display_value\":\"rating=5\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"3+ Rating\",\"id\":\"rating_4\",\"order\":4,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>3\",\"display_value\":\"rating=4\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"2+ Rating\",\"id\":\"rating_3\",\"order\":3,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>2\",\"display_value\":\"rating=3\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"1+ Rating\",\"id\":\"rating_2\",\"order\":2,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>1\",\"display_value\":\"rating=2\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"Rated\",\"id\":\"rating_1\",\"order\":1,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"rating>0\",\"display_value\":\"rating=1\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]},{\"label\":\"Any Rating\",\"id\":\"rating_0\",\"order\":0,\"query\":[{\"table\":\"kb_knowledge\",\"value\":\"ratingANYTHING\",\"display_value\":\"ratingISEMPTY\"},{\"table\":\"kb_social_qa_question\",\"value\":\"sys_id=123321\"}]}]"
+	},
+	"min_result_count": {
+		"value": null,
+		"displayValue": ""
+	},
+	"min_scroll_count": {
+		"value": null,
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=1d41efc49724db10d3efb73de053af0f"/>
+</record_update>
