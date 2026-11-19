@@ -25,7 +25,7 @@
         <name>SV PDP Default Self Service</name>
         <password_needs_reset>false</password_needs_reset>
         <post_processor/>
-        <process_owner/>
+        <process_owner>71fa1d09973e4350d3efb73de053afdb</process_owner>
         <public_access>true</public_access>
         <public_url/>
         <pwd_validity_days>90</pwd_validity_days>
@@ -36,7 +36,7 @@
         <run_start>2026-10-12 21:11:20</run_start>
         <run_time>1970-01-01 06:00:00</run_time>
         <run_type>weekly</run_type>
-        <security_score>72</security_score>
+        <security_score>57</security_score>
         <send_email>false</send_email>
         <send_expiration_reminder>false</send_expiration_reminder>
         <sender_alias/>
@@ -46,14 +46,14 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9845cbcf97b3c310d3efb73de053af41</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>SV PDP Default Self Service</sys_name>
         <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
         <sys_policy/>
         <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
         <sys_update_name>pwd_process_9845cbcf97b3c310d3efb73de053af41</sys_update_name>
         <sys_updated_by>sable.vimes</sys_updated_by>
-        <sys_updated_on>2026-10-12 21:22:31</sys_updated_on>
+        <sys_updated_on>2026-11-19 20:19:38</sys_updated_on>
         <unlock_account>false</unlock_account>
         <url_suffix>sv_pdp_default</url_suffix>
         <user_experience_entry/>
