@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_verification_param">
+    <pwd_verification_param action="DELETE">
+        <description>Number of digits in the verification code that is sent to the user's Email device</description>
+        <name>complexity</name>
+        <order>100</order>
+        <sys_class_name>pwd_verification_param</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:19:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>54e68fc797f3c310d3efb73de053afc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>complexity</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>pwd_verification_param_54e68fc797f3c310d3efb73de053afc3</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:19:25</sys_updated_on>
+        <value>6</value>
+        <verification display_value="">7c56074797f3c310d3efb73de053af98</verification>
+    </pwd_verification_param>
+    <sys_translated_text action="DELETE" query="documentkey=54e68fc797f3c310d3efb73de053afc3"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <merge_base/>
+        <name>pwd_verification_param_54e68fc797f3c310d3efb73de053afc3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_verification_param"><pwd_verification_param action="INSERT_OR_UPDATE"><description>Number of digits in the verification code that is sent to the user's Email device</description><name>complexity</name><order>100</order><sys_class_name>pwd_verification_param</sys_class_name><sys_created_by>sable.vimes</sys_created_by><sys_created_on>2026-10-12 21:19:25</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>54e68fc797f3c310d3efb73de053afc3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>complexity</sys_name><sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package><sys_policy/><sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope><sys_update_name>pwd_verification_param_54e68fc797f3c310d3efb73de053afc3</sys_update_name><sys_updated_by>sable.vimes</sys_updated_by><sys_updated_on>2026-10-12 21:19:25</sys_updated_on><value>6</value><verification display_value="">7c56074797f3c310d3efb73de053af98</verification></pwd_verification_param><sys_translated_text action="delete_multiple" query="documentkey=54e68fc797f3c310d3efb73de053afc3"/></record_update>]]></payload>
+        <payload_hash>-2010614517</payload_hash>
+        <record_name>complexity</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:19:25</sys_created_on>
+        <sys_id>fa170b0b97f3c310d3efb73de053aff2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a131fc11540000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:19:25</sys_updated_on>
+        <type>Password Reset Verification Param</type>
+        <update_guid>ba170b0bcdf3c3107b73d9c8bce9bbf1</update_guid>
+        <update_guid_history>ba170b0bcdf3c3107b73d9c8bce9bbf1:-2010614517</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="complexity">ac71ee5397a0d310d3efb73de053afcd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-19 20:00:27</sys_created_on>
+        <sys_db_object display_value="" name="pwd_verification_param">pwd_verification_param</sys_db_object>
+        <sys_id>55faf0f08c074401955782604c1c99e1</sys_id>
+        <sys_metadata>54e68fc797f3c310d3efb73de053afc3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>complexity</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>pwd_verification_param_54e68fc797f3c310d3efb73de053afc3</sys_update_name>
+        <sys_update_version display_value="pwd_verification_param_54e68fc797f3c310d3efb73de053afc3">fa170b0b97f3c310d3efb73de053aff2</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-19 20:00:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

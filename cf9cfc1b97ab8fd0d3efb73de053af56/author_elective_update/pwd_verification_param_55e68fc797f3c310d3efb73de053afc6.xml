@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_verification_param">
+    <pwd_verification_param action="DELETE">
+        <description>Maximum number of Email verification codes to send to a particular device in one day</description>
+        <name>max_per_day</name>
+        <order>100</order>
+        <sys_class_name>pwd_verification_param</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:19:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>55e68fc797f3c310d3efb73de053afc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>max_per_day</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_update_name>pwd_verification_param_55e68fc797f3c310d3efb73de053afc6</sys_update_name>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:19:25</sys_updated_on>
+        <value>10</value>
+        <verification display_value="">7c56074797f3c310d3efb73de053af98</verification>
+    </pwd_verification_param>
+    <sys_translated_text action="DELETE" query="documentkey=55e68fc797f3c310d3efb73de053afc6"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</application>
+        <file_path/>
+        <instance_id>96d02f1e93a503d4d9f6ddd548373c4f</instance_id>
+        <instance_name>dev410487</instance_name>
+        <merge_base/>
+        <name>pwd_verification_param_55e68fc797f3c310d3efb73de053afc6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pwd_verification_param"><pwd_verification_param action="INSERT_OR_UPDATE"><description>Maximum number of Email verification codes to send to a particular device in one day</description><name>max_per_day</name><order>100</order><sys_class_name>pwd_verification_param</sys_class_name><sys_created_by>sable.vimes</sys_created_by><sys_created_on>2026-10-12 21:19:25</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>55e68fc797f3c310d3efb73de053afc6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>max_per_day</sys_name><sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package><sys_policy/><sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope><sys_update_name>pwd_verification_param_55e68fc797f3c310d3efb73de053afc6</sys_update_name><sys_updated_by>sable.vimes</sys_updated_by><sys_updated_on>2026-10-12 21:19:25</sys_updated_on><value>10</value><verification display_value="">7c56074797f3c310d3efb73de053af98</verification></pwd_verification_param><sys_translated_text action="delete_multiple" query="documentkey=55e68fc797f3c310d3efb73de053afc6"/></record_update>]]></payload>
+        <payload_hash>1347159598</payload_hash>
+        <record_name>max_per_day</record_name>
+        <reverted_from/>
+        <source>423db49b97ab8fd0d3efb73de053af06</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-10-12 21:19:25</sys_created_on>
+        <sys_id>7a170b0b97f3c310d3efb73de053aff6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a131fc11740000001</sys_recorded_at>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-10-12 21:19:25</sys_updated_on>
+        <type>Password Reset Verification Param</type>
+        <update_guid>3a170b0bc8f3c310c0e57dbf9fe6a3f5</update_guid>
+        <update_guid_history>3a170b0bc8f3c310c0e57dbf9fe6a3f5:1347159598</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="max_per_day">a071229397a0d310d3efb73de053af26</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sable.vimes</sys_created_by>
+        <sys_created_on>2026-11-19 20:00:28</sys_created_on>
+        <sys_db_object display_value="" name="pwd_verification_param">pwd_verification_param</sys_db_object>
+        <sys_id>08f60acbf7e34aacb130580534565d90</sys_id>
+        <sys_metadata>55e68fc797f3c310d3efb73de053afc6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>max_per_day</sys_name>
+        <sys_package display_value="SV - Public Demo Portal" source="x_885217_sv_publ_0">cf9cfc1b97ab8fd0d3efb73de053af56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SV - Public Demo Portal">cf9cfc1b97ab8fd0d3efb73de053af56</sys_scope>
+        <sys_scope_delete display_value="">295b866a4f5f48988dbf771bd6367f10</sys_scope_delete>
+        <sys_update_name>pwd_verification_param_55e68fc797f3c310d3efb73de053afc6</sys_update_name>
+        <sys_update_version display_value="pwd_verification_param_55e68fc797f3c310d3efb73de053afc6">7a170b0b97f3c310d3efb73de053aff6</sys_update_version>
+        <sys_updated_by>sable.vimes</sys_updated_by>
+        <sys_updated_on>2026-11-19 20:00:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
